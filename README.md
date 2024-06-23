@@ -236,7 +236,6 @@ bashCopy codeIMAGE_INSTALL:append = " \
     linux-firmware-rtl8192cu \
     linux-firmware-rtl8192su \
     linux-firmware-rpidistro-bcm43430 \
-    openssh \
     psplash \
     psplash-raspberrypi \
 "
@@ -602,7 +601,6 @@ IMAGE_INSTALL:append = " \
     linux-firmware-rtl8192cu \
     linux-firmware-rtl8192su \
     linux-firmware-rpidistro-bcm43430 \
-    openssh \
     psplash \
     psplash-raspberrypi \
 "
@@ -655,6 +653,12 @@ ROOTFS_POSTPROCESS_COMMAND += "local_autologin; "
 bitbake core-image-sato -k
 ```
 
+>For Create **SDK** Run :
+>
+>```bash
+>bitbake core-image-sato -c populate_sdk
+>```
+
 ![image-20240618033205669](GP.assets/image-20240618033205669.png)
 
 ![Screenshot_from_2024-06-14_15-35-58](GP.assets/Screenshot_from_2024-06-14_15-35-58.png)
@@ -703,23 +707,9 @@ sudo dd bs=4M if=core-image-sato-raspberrypi3-64.wic of=/dev/sdc status=progress
 
 
 
+## 6. Graphical User Interface GUI (Qt)
 
-
-
-
-
-
--------------------------------------------------------------------------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-# . Install Qt Creator on Host machine (Laptop)
-
-
+### 6.1. Download Qt
 
 - https://www.qt.io/download-qt-installer-oss
 
@@ -735,7 +725,7 @@ sudo dd bs=4M if=core-image-sato-raspberrypi3-64.wic of=/dev/sdc status=progress
 
   ![image-20240520195657579](GP.assets/image-20240520195657579.png)
 
-- Steps to install Qt creator 
+  ### 6.2. install Qt creator 
 
   
 
@@ -770,7 +760,7 @@ sudo dd bs=4M if=core-image-sato-raspberrypi3-64.wic of=/dev/sdc status=progress
 > [SOLVED]
 >
 > ```
->  sudo apt-get install libxcb-cursor0
+> sudo apt-get install libxcb-cursor0
 > ```
 >
 > ![image-20240520201338488](GP.assets/image-20240520201338488.png)
@@ -779,6 +769,58 @@ sudo dd bs=4M if=core-image-sato-raspberrypi3-64.wic of=/dev/sdc status=progress
 
 
 
+![image-20240623053056554](README.assets/image-20240623053056554.png)
 
+### 6.3. Install Qt5 Tool chain for cross compilation
 
-=================================================================================
+```bash
+bitbake meta-toolchain-qt5  
+```
+
+ 
+
+![image-20240623053438699](README.assets/image-20240623053438699.png)
+
+- Go to **cd tmp/deploy/sdk**
+
+```bash
+ cd tmp/deploy/sdk
+```
+
+- Run the this script
+
+  ```bash
+  ./poky-glibc-x86_64-meta-toolchain-qt5-cortex53-raspberrypi3-64-toolchain-4.0.18.sh 
+  ```
+
+  
+
+![Screenshot_from_2024-06-22_21-17-05](README.assets/Screenshot_from_2024-06-22_21-17-05.png)
+
+![Screenshot_from_2024-06-22_22-56-38](README.assets/Screenshot_from_2024-06-22_22-56-38.png)
+
+>I select the Path to be : **/home/anas/yocto/poky/build/target**
+
+![Screenshot_from_2024-06-22_22-59-48](README.assets/Screenshot_from_2024-06-22_22-59-48.png)
+
+![Screenshot_from_2024-06-22_23-04-10](README.assets/Screenshot_from_2024-06-22_23-04-10.png)
+
+### 6.4. Configuring the cross compiling and remote deployment settings on Qt creator
+
+- **source the SDK toolchain. The source path may differ depending on the output of your SDK installation**
+
+```bash
+source /home/anas/yocto/poky/build/target/environment-setup-cortexa53-poky-linux
+```
+
+- **From the same terminal launch qtcreator**
+
+  ```bash
+  ~/Qt/Tools/QtCreator/bin/qtcreator 
+  ```
+
+  
+
+![Screenshot_from_2024-06-22_23-20-24](README.assets/Screenshot_from_2024-06-22_23-20-24.png)
+
+![image-20240623060734842](README.assets/image-20240623060734842.png)
