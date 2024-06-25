@@ -824,3 +824,87 @@ source /home/anas/yocto/poky/build/target/environment-setup-cortexa53-poky-linux
 ![Screenshot_from_2024-06-22_23-20-24](README.assets/Screenshot_from_2024-06-22_23-20-24.png)
 
 ![image-20240623060734842](README.assets/image-20240623060734842.png)
+
+### 6.5. Qt Project Setup
+
+This guide will help you create a new project in Qt Creator that can run on both desktop and Raspberry Pi 3.
+
+**Prerequisites**
+
+- Qt Creator installed on your development machine.
+- Qt for Raspberry Pi 3 toolchain installed (for cross-compilation).
+- A Raspberry Pi 3 with an appropriate operating system installed.
+
+**Steps to Create a New Qt Project**
+
+1. Open Qt Creator
+
+
+
+2. Create a New Project
+
+- Select **File** > **New File or Project** from the menu.
+
+- In the dialog that appears, choose **Application** > **Qt Widgets Application** (or another type of application if needed) and click **Choose...**.
+
+  
+
+3. Set Project Details
+
+- Enter the **Name** and **Location** for your project.
+
+- Click **Next**.
+
+  
+
+4. Define the Project Kit
+
+- Select the kits you want to use. Ensure you select:
+
+  - A desktop kit (e.g., Desktop Qt 5.15.2 GCC 64bit).
+  - The Raspberry Pi kit (you should have previously configured this for cross-compilation).
+
+- Click **Next**.
+
+  
+
+5. Configure Project
+
+- Customize the Class Information if needed (e.g., `MainWindow` class details).
+
+- Click **Next**.
+
+  
+
+6. Review and Finish
+
+- Review your project settings.
+
+- Click **Finish**.
+
+  
+
+7. Write Your Application Code
+
+- Implement your application logic in the generated project files (`main.cpp`, `mainwindow.cpp`, etc.).
+
+- Save your changes.
+
+  
+
+8. Build and Run on Desktop
+
+- Select the desktop kit from the kit selector.
+
+- Click the **Build** button (hammer icon) to compile the project.
+
+- Click the **Run** button (green play icon) to run the application on your desktop.
+
+  
+
+9. Deploy to Raspberry Pi 3
+
+ **a. Cross-Compile the Project**
+
+1. Select the Raspberry Pi kit from the kit selector.
+2. Click the **Build** button to compile the project for Raspberry Pi 3.
