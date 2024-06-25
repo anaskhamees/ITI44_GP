@@ -843,6 +843,7 @@ This guide will help you create a new project in Qt Creator that can run on both
 
 - Select **File** > **New File or Project** from the menu.
 - In the dialog that appears, choose **Application** > **Qt Widgets Application** (or another type of application if needed) and click **Choose...**.
+  
 ![Screenshot from 2024-06-25 14-48-53](https://github.com/anaskhamees/ITI44_GP/assets/151033711/60571586-ed02-4ffe-bc1a-0f67a60a2229)
 
 
@@ -850,7 +851,9 @@ This guide will help you create a new project in Qt Creator that can run on both
 
 - Enter the **Name** and **Location** for your project.
 - Click **Next**.
+  
 ![Screenshot from 2024-06-25 14-49-32](https://github.com/anaskhamees/ITI44_GP/assets/151033711/d53279d9-0646-44f0-bd94-07d288840790)
+
 
 
 4. Define the Project Kit
@@ -858,7 +861,9 @@ This guide will help you create a new project in Qt Creator that can run on both
 - Select the kits you want to use. Ensure you select:
   - A desktop kit (e.g., Desktop Qt 5.15.2 GCC 64bit).
   - The Raspberry Pi kit (you should have previously configured this for cross-compilation).
+    
 ![Screenshot from 2024-06-25 14-50-32](https://github.com/anaskhamees/ITI44_GP/assets/151033711/246ef265-4b92-4956-b2a2-08050cde7fb1)
+
 
 
 5. Configure Project
@@ -867,20 +872,15 @@ This guide will help you create a new project in Qt Creator that can run on both
 - Click **Next**.
 
 
-6. Review and Finish
-
-- Review your project settings.
-- Click **Finish**.
-
-  
-7. Write Your Application Code
+6. Write Your Application Code
 
 - Implement your application logic in the generated project files (`main.cpp`, `mainwindow.cpp`, etc.), you can add .h files to Header Files ,and .cpp files to Source Files
 - Save your changes.
+  
 ![Screenshot from 2024-06-25 14-55-51](https://github.com/anaskhamees/ITI44_GP/assets/151033711/50a3c13c-8f1f-4a69-835f-1cc6c1a2e32b)
 
 
-8. Build and Run on Desktop
+7. Build and Run on Desktop
 
 - Select the desktop kit from the kit selector.
 - Click the **Build** button (hammer icon) to compile the project.
