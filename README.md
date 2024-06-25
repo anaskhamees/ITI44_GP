@@ -901,7 +901,7 @@ This guide will help you create a new project in Qt Creator that can run on both
 
    
 
-## 7. Our IVI deployed features 
+## 7. Features of Our In-Vehicle Infotainment System
 
 ### 1. Music Streaming
 
