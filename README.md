@@ -839,20 +839,15 @@ This guide will help you create a new project in Qt Creator that can run on both
 
 1. Open Qt Creator
 
-
-
 2. Create a New Project
 
 - Select **File** > **New File or Project** from the menu.
-
 - In the dialog that appears, choose **Application** > **Qt Widgets Application** (or another type of application if needed) and click **Choose...**.
-
-  
+![Screenshot from 2024-06-25 14-48-53](https://github.com/anaskhamees/ITI44_GP/assets/151033711/60571586-ed02-4ffe-bc1a-0f67a60a2229)
 
 3. Set Project Details
 
 - Enter the **Name** and **Location** for your project.
-
 - Click **Next**.
 
   
