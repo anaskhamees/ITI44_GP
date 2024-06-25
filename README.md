@@ -844,6 +844,7 @@ This guide will help you create a new project in Qt Creator that can run on both
 - Select **File** > **New File or Project** from the menu.
 - In the dialog that appears, choose **Application** > **Qt Widgets Application** (or another type of application if needed) and click **Choose...**.
   
+
 ![Screenshot from 2024-06-25 14-48-53](https://github.com/anaskhamees/ITI44_GP/assets/151033711/60571586-ed02-4ffe-bc1a-0f67a60a2229)
 
 
@@ -852,6 +853,7 @@ This guide will help you create a new project in Qt Creator that can run on both
 - Enter the **Name** and **Location** for your project.
 - Click **Next**.
   
+
 ![Screenshot from 2024-06-25 14-49-32](https://github.com/anaskhamees/ITI44_GP/assets/151033711/d53279d9-0646-44f0-bd94-07d288840790)
 
 
@@ -862,6 +864,7 @@ This guide will help you create a new project in Qt Creator that can run on both
   - A desktop kit (e.g., Desktop Qt 5.15.2 GCC 64bit).
   - The Raspberry Pi kit (you should have previously configured this for cross-compilation).
     
+
 ![Screenshot from 2024-06-25 14-50-32](https://github.com/anaskhamees/ITI44_GP/assets/151033711/246ef265-4b92-4956-b2a2-08050cde7fb1)
 
 
@@ -877,6 +880,7 @@ This guide will help you create a new project in Qt Creator that can run on both
 - Implement your application logic in the generated project files (`main.cpp`, `mainwindow.cpp`, etc.), you can add .h files to Header Files ,and .cpp files to Source Files
 - Save your changes.
   
+
 ![Screenshot from 2024-06-25 14-55-51](https://github.com/anaskhamees/ITI44_GP/assets/151033711/50a3c13c-8f1f-4a69-835f-1cc6c1a2e32b)
 
 
@@ -892,4 +896,91 @@ This guide will help you create a new project in Qt Creator that can run on both
  **a. Cross-Compile the Project**
 
 1. Select the Raspberry Pi kit from the kit selector.
+
 2. Click the **Build** button to compile the project for Raspberry Pi 3.
+
+   
+
+## 7. Our IVI deployed features 
+
+### 1. Music Streaming
+
+**Description**: When the music icon is clicked, the system streams MP3 files from a USB flash drive. It supports pause, continue, playback, repeat, shuffle, volume up, and volume down.
+
+**Required Qt Classes**:
+
+- `QMediaPlayer`: For playing audio files.
+- `QMediaPlaylist`: For managing playlists and shuffle/repeat functionality.
+- `QFileSystemModel`: To browse files on the USB drive.
+- `QListWidget`: To display the list of songs.
+- `QDirIterator`, `QDir`, `QUrl`: For handling file directories and URLs.
+
+### 2. Video Streaming
+
+**Description**: When the video icon is clicked, the system streams MP4 files from a USB flash drive. It supports pause, continue, playback, volume control, and other playback features.
+
+**Required Qt Classes**:
+
+- `QMediaPlayer`: For playing video files.
+- `QGraphicsVideoItem`: To display the video.
+- `QGraphicsScene`: For managing the video display.
+- `QRectF`: For defining the video display area.
+
+- `QPushButton`: For control buttons (pause, play, volume up/down, etc.).
+
+### 3. Bluetooth Audio Streaming
+
+**Description**: Supports audio streaming from Bluetooth-enabled devices, allowing users to play music wirelessly.
+
+**Required Qt Classes**:
+
+- `QBluetoothLocalDevice`: To manage the local Bluetooth device.
+- `QBluetoothDeviceDiscoveryAgent`: To discover other Bluetooth devices.
+- `QBluetoothSocket`: For Bluetooth communication.
+
+### 4. Time and Date Display
+
+**Description**: The system displays the current time and date.
+
+**Required Qt Classes**:
+
+- `QDate`: For handling dates.
+- `QTime`: For handling time.
+- `QTimer`: To update the display every second.
+- `QLabel`: To display the time and date.
+
+### 5. Temperature Display
+
+**Description**: The system displays the current temperature, acquired from OpenWeatherMap.org using API keys.
+
+**Required Qt Classes**:
+
+- `QNetworkAccessManager`: For making HTTP requests to the OpenWeatherMap API.
+- `QNetworkReply`: To handle the responses from the API.
+- `QJsonDocument`: To parse the JSON data received from the API.
+- `QJsonObject`, `QJsonValue`: For JSON data manipulation.
+- `QNetworkRequest`: For making the network request.
+
+### 6. Settings
+
+**Description**: The settings menu includes options to change the theme and edit the time and date.
+
+**Required Qt Classes**:
+
+- `QComboBox`: For selecting the theme.
+- `QDateTimeEdit`: To edit the date and time.
+- `QSettings`: To save and load settings.
+- `QPushButton`: For applying changes.
+
+### 7. YouTube Integration
+
+**Description**: When the YouTube icon is clicked, the system opens the YouTube page in the browser.
+
+**Required Qt Classes**:
+
+- `QDesktopServices`: To open URLs in the default web browser.
+- `QUrl`: To handle the YouTube URL.
+- `QPushButton`: For the YouTube button.
+- `QWidget`, `QVBoxLayout`: For layout management.
+
+### 8. Air conditioner 
