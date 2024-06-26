@@ -707,6 +707,170 @@ sudo dd bs=4M if=core-image-sato-raspberrypi3-64.wic of=/dev/sdc status=progress
 
 
 
+## WIFI Configuration on RPI 3 B+
+
+Go to RPI and open the terminal 
+
+- check WIFI driver
+
+  ```
+  ifconfig wlan0
+  ```
+
+![wlan](README.assets/wlan.jpeg)
+
+
+
+## 1. wpa supplicant tool
+
+- Edit the **wpa_supplicant.conf** in RPI (/etc/wpa_suppicant.conf)
+
+  ![Screenshot_from_2024-06-26_06-46-45](README.assets/Screenshot_from_2024-06-26_06-46-45.png)
+
+  
+
+```bash
+ctrl_interface=/var/run/wpa_supplicant
+ctrl_interface_group=0
+update_config=1
+
+network={
+    ssid="Network Name"
+    psk="password"
+    key_mgmt=WPA-PSK
+}
+
+```
+
+- Create a service for auto connection in RPI rootfs : **/etc/systemd/system**
+
+  ![Screenshot_from_2024-06-26_07-00-02](README.assets/Screenshot_from_2024-06-26_07-00-02.png)
+
+```bash
+[Unit]
+Description=WPA supplicant
+Before=network.target
+
+[Service]
+ExecStart=/sbin/wpa_supplicant -c /etc/wpa_supplicant.conf -i wlan0
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+
+- After that run those commands
+
+  ```bash
+  systemctl enable wpa_supplicant
+  systemctl start wpa_supplicant
+  ```
+
+  After that when boot the RPI the wifi will connect automatically 
+
+- 
+
+## 2. Connman Tool (option 2)
+
+![image-20240626072659444]( README.assets/image-20240626072659444.png)
+
+![image-20240626072922794](README.assets/image-20240626072922794.png)
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+
+### Do not read the below now >> Anas Will Edit it later
+
+
+
+Enable **connman**
+
+```bash
+systemctl enable connman
+systemctl start connman
+
+```
+
+![image-20240626071825139](README.assets/image-20240626071825139.png) 
+
+To start the ConnMan service, discover Wi-Fi networks, and connect to a specific Wi-Fi network, follow these step-by-step instructions:
+
+### Start ConnMan Service
+
+- `systemctl start connman`: This command starts the ConnMan service.
+- `systemctl enable connman`: This command enables ConnMan to start at boot time.
+
+### Discover Wi-Fi Networks
+
+1. **List Available Wi-Fi Networks:** Now, use `connmanctl` to interact with ConnMan and list available Wi-Fi networks.
+
+   ```bash
+   connmanctl
+   ```
+
+   This command opens the ConnMan interactive shell.
+
+2. **Scan for Wi-Fi Networks:** Inside the ConnMan interactive shell, run the following commands:
+
+   ```
+   scan wifi
+   services
+   ```
+
+   - `scan wifi`: This command instructs ConnMan to scan for available Wi-Fi networks.
+   - `services`: This command lists all available services, including Wi-Fi networks ConnMan has discovered.
+
+   Look for the Wi-Fi network you want to connect to. Note its name (SSID) and its identifier (something like `wifi_1234567890ab_YourSSID_managed_psk`).
+
+### Connect to a Wi-Fi Network
+
+1. **Connect to the Desired Wi-Fi Network:** After identifying the Wi-Fi network you want to connect to, use the following commands inside the ConnMan interactive shell:
+
+   ```
+   agent on
+   connect wifi_1234567890ab_YourSSID_managed_psk
+   ```
+
+   - `agent on`: This command enables the ConnMan agent, which is necessary for handling network connection requests that require user interaction (such as entering a Wi-Fi passphrase).
+   - `connect wifi_1234567890ab_YourSSID_managed_psk`: Replace `wifi_1234567890ab_YourSSID_managed_psk` with the actual identifier of the Wi-Fi network you want to connect to. This command initiates the connection process.
+
+2. **Enter Wi-Fi Passphrase (if required):** If the Wi-Fi network is secured with a passphrase, ConnMan will prompt you to enter it. Type the passphrase and press Enter.
+
+3. **Verify Connection:** Once entered correctly, ConnMan will attempt to connect to the Wi-Fi network. If successful, you should see confirmation messages in the ConnMan shell indicating the connection status.
+
+### Exiting ConnMan Shell
+
+1. **Exit ConnMan Shell:** After connecting to the Wi-Fi network or if you need to exit the ConnMan shell, you can simply type:
+
+   ```
+   exit
+   ```
+
+   This command will exit the ConnMan interactive shell and return you to your regular terminal prompt.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 6. Graphical User Interface GUI (Qt)
 
 ### 6.1. Download Qt
