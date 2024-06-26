@@ -596,11 +596,19 @@ IMAGE_INSTALL:append = " \
     pi-bluetooth \
     bluez5-testtools \
     udev-rules-rpi \
+    linux-firmware \
+    iw \
+    kernel-modules \
     linux-firmware-ralink \
     linux-firmware-rtl8192ce \
     linux-firmware-rtl8192cu \
     linux-firmware-rtl8192su \
     linux-firmware-rpidistro-bcm43430 \
+    linux-firmware-bcm43430 \
+    connman \
+    connman-client \
+    dhcpcd \
+    openssh \
     psplash \
     psplash-raspberrypi \
 "
@@ -611,6 +619,9 @@ DISTRO_FEATURES:append = " \
     wifi \
     pi-bluetooth \
     linux-firmware-bcm43430 \
+    systemd \
+    usrmerge \
+    ipv4 \
 "
 
 MACHINE_FEATURES:append = " \
@@ -625,24 +636,13 @@ IMAGE_INSTALL:append = " xserver-xorg xf86-video-fbdev xf86-input-evdev xterm ma
 
 EXTRA_IMAGE_FEATURES += "tools-debug"
 
+# For Multithreading 
+
 BB_NUMBER_THREADS = "4"
 PARALLEL_MAKE = "-j 4"
 
-IMAGE_FEATURES_REMOVE += " \
-    debug-tweaks \
-"
- 
-root_LOCAL_GETTY ?= " \
-     ${IMAGE_ROOTFS}${systemd_system_unitdir}/serial-getty@.service \
-     ${IMAGE_ROOTFS}${systemd_system_unitdir}/getty@.service \
-"
-# Define a function that modifies the systemd unit config files with the autologin arguments
-local_autologin () {
-    sed -i -e 's/^\(ExecStart *=.*getty \)/\1--autologin root /' ${root_LOCAL_GETTY}
-}
+IMAGE_FSTYPES = "tar.bz2 ext4 rpi-sdimg"
 
-# Add the function so that it is executed after the rootfs has been generated
-ROOTFS_POSTPROCESS_COMMAND += "local_autologin; "
 ```
 
 
