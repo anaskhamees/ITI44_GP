@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-f9679c83aef56889435c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "IVI_Qt",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "IVI_Qt::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-IVI_Qt-Debug-0ff9a7d8661633338564.json",
+					"name" : "IVI_Qt",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "IVI_Qt_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-IVI_Qt_autogen-Debug-0ff526dc117744dfdf4b.json",
+					"name" : "IVI_Qt_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "IVI_Qt_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-IVI_Qt_autogen_timestamp_deps-Debug-bda9f5b6c1837bcb6f62.json",
+					"name" : "IVI_Qt_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/build/rpi-Debug",
+		"source" : "/home/anas/Downloads/IVI_Qt_v11/IVI_Qt"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

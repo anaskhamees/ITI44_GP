@@ -1,0 +1,193 @@
+The target system is: Linux -  - aarch64
+The host system is: Linux - 6.5.0-41-generic - x86_64
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/bin/aarch64-poky-linux/aarch64-poky-linux-g++ 
+Build flags: ;-O2;-pipe;-g;-feliminate-unused-debug-types;
+Id flags: -c 
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
+
+The CXX compiler identification is GNU, found in "/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/build/rpi-Debug/CMakeFiles/3.22.3/CompilerIdCXX/CMakeCXXCompilerId.o"
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/anas/Downloads/IVI_Qt_v11/IVI_Qt/build/rpi-Debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/bin/ninja cmTC_ab2f4 && [1/2] Building CXX object CMakeFiles/cmTC_ab2f4.dir/CMakeCXXCompilerABI.cpp.o
+Using built-in specs.
+COLLECT_GCC=/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/bin/aarch64-poky-linux/aarch64-poky-linux-g++
+Target: aarch64-poky-linux
+Configured with: ../../../../../../work-shared/gcc-11.4.0-r0/gcc-11.4.0/configure --build=x86_64-linux --host=x86_64-pokysdk-linux --target=aarch64-poky-linux --prefix=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr --exec_prefix=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr --bindir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/bin/aarch64-poky-linux --sbindir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/bin/aarch64-poky-linux --libexecdir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux --datadir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/share --sysconfdir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/etc --sharedstatedir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/com --localstatedir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/var --libdir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux --includedir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/include --oldincludedir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/include --infodir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/share/info --mandir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/share/man --disable-silent-rules --disable-dependency-tracking --with-libtool-sysroot=/home/anas/yocto/poky/build/tmp/work/x86_64-nativesdk-pokysdk-linux/gcc-cross-canadian-aarch64/11.4.0-r0/recipe-sysroot --with-gnu-ld --enable-shared --enable-languages=c,c++ --enable-threads=posix --enable-multilib --enable-default-pie --enable-c99 --enable-long-long --enable-symvers=gnu --enable-libstdcxx-pch --program-prefix=aarch64-poky-linux- --without-local-prefix --disable-install-libiberty --disable-libssp --enable-libitm --enable-lto --disable-bootstrap --with-system-zlib --with-linker-hash-style=gnu --enable-linker-build-id --with-ppl=no --with-cloog=no --enable-checking=release --enable-cheaders=c_global --without-isl --with-gxx-include-dir=/not/exist/usr/include/c++/11.4.0 --with-build-time-tools=/home/anas/yocto/poky/build/tmp/work/x86_64-nativesdk-pokysdk-linux/gcc-cross-canadian-aarch64/11.4.0-r0/recipe-sysroot-native/usr/aarch64-poky-linux/bin --with-sysroot=/not/exist --with-build-sysroot=/home/anas/yocto/poky/build/tmp/work/x86_64-nativesdk-pokysdk-linux/gcc-cross-canadian-aarch64/11.4.0-r0/recipe-sysroot --with-plugin-ld=ld --enable-poison-system-directories --disable-static --enable-nls --with-glibc-version=2.28 --enable-initfini-array --enable-__cxa_atexit
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 11.4.0 (GCC) 
+COLLECT_GCC_OPTIONS='-O2' '-pipe' '-g' '-feliminate-unused-debug-types' '-v' '-o' 'CMakeFiles/cmTC_ab2f4.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_ab2f4.dir/'
+ /home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/cc1plus -quiet -v -isysroot /home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux -D_GNU_SOURCE /home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_ab2f4.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mlittle-endian -mabi=lp64 -g -O2 -version -feliminate-unused-debug-types -o - |
+ /home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/as -v --gdwarf-5 -EL -mabi=lp64 -o CMakeFiles/cmTC_ab2f4.dir/CMakeCXXCompilerABI.cpp.o
+GNU assembler version 2.38 (aarch64-poky-linux) using BFD version (GNU Binutils) 2.38.20220708
+GNU C++17 (GCC) version 11.4.0 (aarch64-poky-linux)
+	compiled by GNU C version 11.4.0, GMP version 6.2.1, MPFR version 4.1.1, MPC version 1.2.1, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/aarch64-poky-linux/11.4.0/include"
+ignoring nonexistent directory "/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/local/include"
+ignoring nonexistent directory "/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/../../../../../aarch64-poky-linux/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/include/c++/11.4.0
+ /home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/include/c++/11.4.0/aarch64-poky-linux
+ /home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/include/c++/11.4.0/backward
+ /home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/include
+ /home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/include-fixed
+ /home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/include/
+End of search list.
+GNU C++17 (GCC) version 11.4.0 (aarch64-poky-linux)
+	compiled by GNU C version 11.4.0, GMP version 6.2.1, MPFR version 4.1.1, MPC version 1.2.1, isl version none
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: df183a6113a1ba21245a83f363b65a58
+COMPILER_PATH=/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/:/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/:/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/:/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/:/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/
+LIBRARY_PATH=/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/:/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/lib/:/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/aarch64-poky-linux/11.4.0/:/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/
+COLLECT_GCC_OPTIONS='-O2' '-pipe' '-g' '-feliminate-unused-debug-types' '-v' '-o' 'CMakeFiles/cmTC_ab2f4.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_ab2f4.dir/CMakeCXXCompilerABI.cpp.'
+[2/2] Linking CXX executable cmTC_ab2f4
+Using built-in specs.
+COLLECT_GCC=/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/bin/aarch64-poky-linux/aarch64-poky-linux-g++
+COLLECT_LTO_WRAPPER=/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/lto-wrapper
+Target: aarch64-poky-linux
+Configured with: ../../../../../../work-shared/gcc-11.4.0-r0/gcc-11.4.0/configure --build=x86_64-linux --host=x86_64-pokysdk-linux --target=aarch64-poky-linux --prefix=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr --exec_prefix=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr --bindir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/bin/aarch64-poky-linux --sbindir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/bin/aarch64-poky-linux --libexecdir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux --datadir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/share --sysconfdir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/etc --sharedstatedir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/com --localstatedir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/var --libdir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux --includedir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/include --oldincludedir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/include --infodir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/share/info --mandir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/share/man --disable-silent-rules --disable-dependency-tracking --with-libtool-sysroot=/home/anas/yocto/poky/build/tmp/work/x86_64-nativesdk-pokysdk-linux/gcc-cross-canadian-aarch64/11.4.0-r0/recipe-sysroot --with-gnu-ld --enable-shared --enable-languages=c,c++ --enable-threads=posix --enable-multilib --enable-default-pie --enable-c99 --enable-long-long --enable-symvers=gnu --enable-libstdcxx-pch --program-prefix=aarch64-poky-linux- --without-local-prefix --disable-install-libiberty --disable-libssp --enable-libitm --enable-lto --disable-bootstrap --with-system-zlib --with-linker-hash-style=gnu --enable-linker-build-id --with-ppl=no --with-cloog=no --enable-checking=release --enable-cheaders=c_global --without-isl --with-gxx-include-dir=/not/exist/usr/include/c++/11.4.0 --with-build-time-tools=/home/anas/yocto/poky/build/tmp/work/x86_64-nativesdk-pokysdk-linux/gcc-cross-canadian-aarch64/11.4.0-r0/recipe-sysroot-native/usr/aarch64-poky-linux/bin --with-sysroot=/not/exist --with-build-sysroot=/home/anas/yocto/poky/build/tmp/work/x86_64-nativesdk-pokysdk-linux/gcc-cross-canadian-aarch64/11.4.0-r0/recipe-sysroot --with-plugin-ld=ld --enable-poison-system-directories --disable-static --enable-nls --with-glibc-version=2.28 --enable-initfini-array --enable-__cxa_atexit
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 11.4.0 (GCC) 
+COMPILER_PATH=/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/:/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/:/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/:/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/:/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/
+LIBRARY_PATH=/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/:/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/lib/:/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/aarch64-poky-linux/11.4.0/:/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/
+COLLECT_GCC_OPTIONS='-O2' '-pipe' '-g' '-feliminate-unused-debug-types' '-v' '-o' 'cmTC_ab2f4' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_ab2f4.'
+ /home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/collect2 -plugin /home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/liblto_plugin.so -plugin-opt=/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccKXoRlz.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux --build-id --eh-frame-hdr --hash-style=gnu -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux -pie -o cmTC_ab2f4 /home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/Scrt1.o /home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/crti.o /home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/aarch64-poky-linux/11.4.0/crtbeginS.o -L/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0 -L/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/lib -L/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/aarch64-poky-linux/11.4.0 -L/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib -O1 --hash-style=gnu --as-needed -z relro -z now CMakeFiles/cmTC_ab2f4.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/aarch64-poky-linux/11.4.0/crtendS.o /home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/crtn.o
+COLLECT_GCC_OPTIONS='-O2' '-pipe' '-g' '-feliminate-unused-debug-types' '-v' '-o' 'cmTC_ab2f4' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_ab2f4.'
+
+
+
+Parsed CXX implicit include dir info from above output: rv=done
+  found start of include info
+  found start of implicit include info
+    add: [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/include/c++/11.4.0]
+    add: [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/include/c++/11.4.0/aarch64-poky-linux]
+    add: [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/include/c++/11.4.0/backward]
+    add: [/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/include]
+    add: [/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/include-fixed]
+    add: [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/include/]
+  end of search list found
+  collapse include dir [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/include/c++/11.4.0] ==> [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/include/c++/11.4.0]
+  collapse include dir [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/include/c++/11.4.0/aarch64-poky-linux] ==> [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/include/c++/11.4.0/aarch64-poky-linux]
+  collapse include dir [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/include/c++/11.4.0/backward] ==> [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/include/c++/11.4.0/backward]
+  collapse include dir [/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/include] ==> [/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/include]
+  collapse include dir [/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/include-fixed] ==> [/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/include-fixed]
+  collapse include dir [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/include/] ==> [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/include]
+  implicit include dirs: [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/include/c++/11.4.0;/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/include/c++/11.4.0/aarch64-poky-linux;/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/include/c++/11.4.0/backward;/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/include;/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/include-fixed;/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/include]
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(aarch64-poky-linux-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/anas/Downloads/IVI_Qt_v11/IVI_Qt/build/rpi-Debug/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command(s):/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/bin/ninja cmTC_ab2f4 && [1/2] Building CXX object CMakeFiles/cmTC_ab2f4.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/bin/aarch64-poky-linux/aarch64-poky-linux-g++]
+  ignore line: [Target: aarch64-poky-linux]
+  ignore line: [Configured with: ../../../../../../work-shared/gcc-11.4.0-r0/gcc-11.4.0/configure --build=x86_64-linux --host=x86_64-pokysdk-linux --target=aarch64-poky-linux --prefix=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr --exec_prefix=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr --bindir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/bin/aarch64-poky-linux --sbindir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/bin/aarch64-poky-linux --libexecdir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux --datadir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/share --sysconfdir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/etc --sharedstatedir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/com --localstatedir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/var --libdir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux --includedir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/include --oldincludedir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/include --infodir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/share/info --mandir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/share/man --disable-silent-rules --disable-dependency-tracking --with-libtool-sysroot=/home/anas/yocto/poky/build/tmp/work/x86_64-nativesdk-pokysdk-linux/gcc-cross-canadian-aarch64/11.4.0-r0/recipe-sysroot --with-gnu-ld --enable-shared --enable-languages=c,c++ --enable-threads=posix --enable-multilib --enable-default-pie --enable-c99 --enable-long-long --enable-symvers=gnu --enable-libstdcxx-pch --program-prefix=aarch64-poky-linux- --without-local-prefix --disable-install-libiberty --disable-libssp --enable-libitm --enable-lto --disable-bootstrap --with-system-zlib --with-linker-hash-style=gnu --enable-linker-build-id --with-ppl=no --with-cloog=no --enable-checking=release --enable-cheaders=c_global --without-isl --with-gxx-include-dir=/not/exist/usr/include/c++/11.4.0 --with-build-time-tools=/home/anas/yocto/poky/build/tmp/work/x86_64-nativesdk-pokysdk-linux/gcc-cross-canadian-aarch64/11.4.0-r0/recipe-sysroot-native/usr/aarch64-poky-linux/bin --with-sysroot=/not/exist --with-build-sysroot=/home/anas/yocto/poky/build/tmp/work/x86_64-nativesdk-pokysdk-linux/gcc-cross-canadian-aarch64/11.4.0-r0/recipe-sysroot --with-plugin-ld=ld --enable-poison-system-directories --disable-static --enable-nls --with-glibc-version=2.28 --enable-initfini-array --enable-__cxa_atexit]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 11.4.0 (GCC) ]
+  ignore line: [COLLECT_GCC_OPTIONS='-O2' '-pipe' '-g' '-feliminate-unused-debug-types' '-v' '-o' 'CMakeFiles/cmTC_ab2f4.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_ab2f4.dir/']
+  ignore line: [ /home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/cc1plus -quiet -v -isysroot /home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux -D_GNU_SOURCE /home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/share/cmake-3.22/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_ab2f4.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mlittle-endian -mabi=lp64 -g -O2 -version -feliminate-unused-debug-types -o - |]
+  ignore line: [ /home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/as -v --gdwarf-5 -EL -mabi=lp64 -o CMakeFiles/cmTC_ab2f4.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [GNU assembler version 2.38 (aarch64-poky-linux) using BFD version (GNU Binutils) 2.38.20220708]
+  ignore line: [GNU C++17 (GCC) version 11.4.0 (aarch64-poky-linux)]
+  ignore line: [	compiled by GNU C version 11.4.0  GMP version 6.2.1  MPFR version 4.1.1  MPC version 1.2.1  isl version none]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [ignoring nonexistent directory "/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/aarch64-poky-linux/11.4.0/include"]
+  ignore line: [ignoring nonexistent directory "/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/local/include"]
+  ignore line: [ignoring nonexistent directory "/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/../../../../../aarch64-poky-linux/include"]
+  ignore line: [#include "..." search starts here:]
+  ignore line: [#include <...> search starts here:]
+  ignore line: [ /home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/include/c++/11.4.0]
+  ignore line: [ /home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/include/c++/11.4.0/aarch64-poky-linux]
+  ignore line: [ /home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/include/c++/11.4.0/backward]
+  ignore line: [ /home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/include]
+  ignore line: [ /home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/include-fixed]
+  ignore line: [ /home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/include/]
+  ignore line: [End of search list.]
+  ignore line: [GNU C++17 (GCC) version 11.4.0 (aarch64-poky-linux)]
+  ignore line: [	compiled by GNU C version 11.4.0  GMP version 6.2.1  MPFR version 4.1.1  MPC version 1.2.1  isl version none]
+  ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+  ignore line: [Compiler executable checksum: df183a6113a1ba21245a83f363b65a58]
+  ignore line: [COMPILER_PATH=/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/:/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/:/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/:/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/:/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/]
+  ignore line: [LIBRARY_PATH=/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/:/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/lib/:/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/aarch64-poky-linux/11.4.0/:/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-O2' '-pipe' '-g' '-feliminate-unused-debug-types' '-v' '-o' 'CMakeFiles/cmTC_ab2f4.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'CMakeFiles/cmTC_ab2f4.dir/CMakeCXXCompilerABI.cpp.']
+  ignore line: [[2/2] Linking CXX executable cmTC_ab2f4]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/bin/aarch64-poky-linux/aarch64-poky-linux-g++]
+  ignore line: [COLLECT_LTO_WRAPPER=/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/lto-wrapper]
+  ignore line: [Target: aarch64-poky-linux]
+  ignore line: [Configured with: ../../../../../../work-shared/gcc-11.4.0-r0/gcc-11.4.0/configure --build=x86_64-linux --host=x86_64-pokysdk-linux --target=aarch64-poky-linux --prefix=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr --exec_prefix=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr --bindir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/bin/aarch64-poky-linux --sbindir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/bin/aarch64-poky-linux --libexecdir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux --datadir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/share --sysconfdir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/etc --sharedstatedir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/com --localstatedir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/var --libdir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux --includedir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/include --oldincludedir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/include --infodir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/share/info --mandir=/usr/local/oe-sdk-hardcoded-buildpath/sysroots/x86_64-pokysdk-linux/usr/share/man --disable-silent-rules --disable-dependency-tracking --with-libtool-sysroot=/home/anas/yocto/poky/build/tmp/work/x86_64-nativesdk-pokysdk-linux/gcc-cross-canadian-aarch64/11.4.0-r0/recipe-sysroot --with-gnu-ld --enable-shared --enable-languages=c,c++ --enable-threads=posix --enable-multilib --enable-default-pie --enable-c99 --enable-long-long --enable-symvers=gnu --enable-libstdcxx-pch --program-prefix=aarch64-poky-linux- --without-local-prefix --disable-install-libiberty --disable-libssp --enable-libitm --enable-lto --disable-bootstrap --with-system-zlib --with-linker-hash-style=gnu --enable-linker-build-id --with-ppl=no --with-cloog=no --enable-checking=release --enable-cheaders=c_global --without-isl --with-gxx-include-dir=/not/exist/usr/include/c++/11.4.0 --with-build-time-tools=/home/anas/yocto/poky/build/tmp/work/x86_64-nativesdk-pokysdk-linux/gcc-cross-canadian-aarch64/11.4.0-r0/recipe-sysroot-native/usr/aarch64-poky-linux/bin --with-sysroot=/not/exist --with-build-sysroot=/home/anas/yocto/poky/build/tmp/work/x86_64-nativesdk-pokysdk-linux/gcc-cross-canadian-aarch64/11.4.0-r0/recipe-sysroot --with-plugin-ld=ld --enable-poison-system-directories --disable-static --enable-nls --with-glibc-version=2.28 --enable-initfini-array --enable-__cxa_atexit]
+  ignore line: [Thread model: posix]
+  ignore line: [Supported LTO compression algorithms: zlib zstd]
+  ignore line: [gcc version 11.4.0 (GCC) ]
+  ignore line: [COMPILER_PATH=/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/:/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/:/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/:/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/:/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/]
+  ignore line: [LIBRARY_PATH=/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/:/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/lib/:/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/aarch64-poky-linux/11.4.0/:/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-O2' '-pipe' '-g' '-feliminate-unused-debug-types' '-v' '-o' 'cmTC_ab2f4' '-shared-libgcc' '-mlittle-endian' '-mabi=lp64' '-dumpdir' 'cmTC_ab2f4.']
+  link line: [ /home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/collect2 -plugin /home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/liblto_plugin.so -plugin-opt=/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccKXoRlz.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux --build-id --eh-frame-hdr --hash-style=gnu -dynamic-linker /lib/ld-linux-aarch64.so.1 -X -EL -maarch64linux -pie -o cmTC_ab2f4 /home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/Scrt1.o /home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/crti.o /home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/aarch64-poky-linux/11.4.0/crtbeginS.o -L/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0 -L/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/lib -L/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/aarch64-poky-linux/11.4.0 -L/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib -O1 --hash-style=gnu --as-needed -z relro -z now CMakeFiles/cmTC_ab2f4.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/aarch64-poky-linux/11.4.0/crtendS.o /home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/crtn.o]
+    arg [/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccKXoRlz.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [--sysroot=/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib/ld-linux-aarch64.so.1] ==> ignore
+    arg [-X] ==> ignore
+    arg [-EL] ==> ignore
+    arg [-maarch64linux] ==> ignore
+    arg [-pie] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_ab2f4] ==> ignore
+    arg [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/Scrt1.o] ==> obj [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/Scrt1.o]
+    arg [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/crti.o] ==> obj [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/crti.o]
+    arg [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/aarch64-poky-linux/11.4.0/crtbeginS.o] ==> obj [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/aarch64-poky-linux/11.4.0/crtbeginS.o]
+    arg [-L/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0] ==> dir [/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0]
+    arg [-L/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/lib] ==> dir [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/lib]
+    arg [-L/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/aarch64-poky-linux/11.4.0] ==> dir [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/aarch64-poky-linux/11.4.0]
+    arg [-L/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib] ==> dir [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib]
+    arg [-O1] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [-znow] ==> ignore
+    arg [CMakeFiles/cmTC_ab2f4.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [-lstdc++] ==> lib [stdc++]
+    arg [-lm] ==> lib [m]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [-lgcc] ==> lib [gcc]
+    arg [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/aarch64-poky-linux/11.4.0/crtendS.o] ==> obj [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/aarch64-poky-linux/11.4.0/crtendS.o]
+    arg [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/crtn.o] ==> obj [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/crtn.o]
+  collapse library dir [/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0] ==> [/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0]
+  collapse library dir [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/lib] ==> [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/lib]
+  collapse library dir [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/aarch64-poky-linux/11.4.0] ==> [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/aarch64-poky-linux/11.4.0]
+  collapse library dir [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib] ==> [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib]
+  implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+  implicit objs: [/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/Scrt1.o;/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/crti.o;/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/aarch64-poky-linux/11.4.0/crtbeginS.o;/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/aarch64-poky-linux/11.4.0/crtendS.o;/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/crtn.o]
+  implicit dirs: [/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/lib/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0;/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/lib;/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib/aarch64-poky-linux/11.4.0;/home/anas/yocto/poky/build/target/sysroots/cortexa53-poky-linux/usr/lib]
+  implicit fwks: []
+
+

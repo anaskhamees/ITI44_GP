@@ -1,0 +1,31 @@
+{
+	"BUILD_DIR" : "/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/build/rpi-Debug/IVI_Qt_autogen",
+	"CMAKE_BINARY_DIR" : "/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/build/rpi-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/build/rpi-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/anas/Downloads/IVI_Qt_v11/IVI_Qt",
+	"CMAKE_SOURCE_DIR" : "/home/anas/Downloads/IVI_Qt_v11/IVI_Qt",
+	"INCLUDE_DIR" : "/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/build/rpi-Debug/IVI_Qt_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/media/ac.png",
+		"/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/media/colorful.jpg",
+		"/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/media/colorfulBackground.jpeg",
+		"/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/media/pattern.png",
+		"/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/media/sporty.jpg",
+		"/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/media/darkBackground.png",
+		"/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/media/blue-wallpaper-preview.jpg",
+		"/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/media/blurredBlue.jpg",
+		"/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/media/purple.jpg",
+		"/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/media/galaxy.jpg"
+	],
+	"LOCK_FILE" : "/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/build/rpi-Debug/CMakeFiles/IVI_Qt_autogen.dir/AutoRcc_background_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "background" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_background.cpp",
+	"RCC_EXECUTABLE" : "/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/bin/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/build/rpi-Debug/CMakeFiles/IVI_Qt_autogen.dir/AutoRcc_background_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/background.qrc",
+	"VERBOSITY" : 0
+}

@@ -1,0 +1,32 @@
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/bin/aarch64-poky-linux/aarch64-poky-linux-g++ 
+Build flags: ;-O2;-pipe;-g;-feliminate-unused-debug-types;
+Id flags: -c;--target=aarch64-poky-linux 
+
+The output was:
+1
+aarch64-poky-linux-g++: error: unrecognized command-line option ‘--target=aarch64-poky-linux’
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/bin/aarch64-poky-linux/aarch64-poky-linux-g++ 
+Build flags: ;-O2;-pipe;-g;-feliminate-unused-debug-types;
+Id flags:  
+
+The output was:
+1
+/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/ld: cannot find Scrt1.o: No such file or directory
+/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/ld: cannot find crti.o: No such file or directory
+/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/ld: cannot find crtbeginS.o: No such file or directory
+/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/ld: cannot find -lstdc++: No such file or directory
+/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/ld: cannot find -lm: No such file or directory
+/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/ld: cannot find -lgcc_s: No such file or directory
+/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/ld: cannot find -lgcc: No such file or directory
+/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/ld: cannot find -lc: No such file or directory
+/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/ld: cannot find -lgcc_s: No such file or directory
+/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/ld: cannot find -lgcc: No such file or directory
+/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/ld: cannot find crtendS.o: No such file or directory
+/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/libexec/aarch64-poky-linux/gcc/aarch64-poky-linux/11.4.0/ld: cannot find crtn.o: No such file or directory
+collect2: error: ld returned 1 exit status
+
+

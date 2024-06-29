@@ -1,0 +1,25 @@
+{
+	"BUILD_DIR" : "/home/hoda/IVI_Qt/build/IVI_Qt_autogen",
+	"CMAKE_BINARY_DIR" : "/home/hoda/IVI_Qt/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/hoda/IVI_Qt/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/hoda/IVI_Qt",
+	"CMAKE_SOURCE_DIR" : "/home/hoda/IVI_Qt",
+	"INCLUDE_DIR" : "/home/hoda/IVI_Qt/build/IVI_Qt_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/hoda/IVI_Qt/flashStatus.txt",
+		"/home/hoda/IVI_Qt/displayedSongs.txt",
+		"/home/hoda/IVI_Qt/media/mp3_icon.png",
+		"/home/hoda/IVI_Qt/media/usb_icon.png"
+	],
+	"LOCK_FILE" : "/home/hoda/IVI_Qt/build/CMakeFiles/IVI_Qt_autogen.dir/AutoRcc_musicfiles_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "musicfiles" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_musicfiles.cpp",
+	"RCC_EXECUTABLE" : "/home/hoda/Qt/5.15.2/gcc_64/bin/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/hoda/IVI_Qt/build/CMakeFiles/IVI_Qt_autogen.dir/AutoRcc_musicfiles_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/home/hoda/IVI_Qt/musicfiles.qrc",
+	"VERBOSITY" : 0
+}

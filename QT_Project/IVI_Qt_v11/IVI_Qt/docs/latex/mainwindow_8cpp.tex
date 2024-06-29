@@ -1,0 +1,338 @@
+\hypertarget{mainwindow_8cpp}{}\doxysection{mainwindow.\+cpp File Reference}
+\label{mainwindow_8cpp}\index{mainwindow.cpp@{mainwindow.cpp}}
+{\ttfamily \#include \char`\"{}mainwindow.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}systeminterface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}availabletargets.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}targetconfiguration.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}SDconfiguration.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ui\+\_\+mainwindow.\+h\char`\"{}}\newline
+Include dependency graph for mainwindow.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mainwindow_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{mainwindow_8cpp_aed8d7cd911f58c9d7a527cf8e3f937bf}{COMMAND\+\_\+\+SUCCEDED}}~0
+\item 
+\#define \mbox{\hyperlink{mainwindow_8cpp_a98002e0b286baafa476b88720200796c}{HOME\+\_\+\+PAGE\+\_\+\+INDEX}}~0
+\item 
+\#define \mbox{\hyperlink{mainwindow_8cpp_a0dc4af3a1751521eb794a5dac7e16aed}{VIDEO\+\_\+\+PAGE\+\_\+\+INDEX}}~1
+\item 
+\#define \mbox{\hyperlink{mainwindow_8cpp_ae9b3d8a4a538f0b191c5b186f2077a9c}{MUSIC\+\_\+\+PAGE\+\_\+\+INDEX}}~2
+\item 
+\#define \mbox{\hyperlink{mainwindow_8cpp_a43f27ae9c496ba5bc82f1bfe134ac1d9}{BLUETOOTH\+\_\+\+PAGE\+\_\+\+INDEX}}~3
+\item 
+\#define \mbox{\hyperlink{mainwindow_8cpp_ad69d4deb64540b967bbbecf0c8ca597d}{SETTINGS\+\_\+\+PAGE\+\_\+\+INDEX}}~4
+\item 
+\#define \mbox{\hyperlink{mainwindow_8cpp_ac6ba115e9f4e74f695c41b76a605e0ba}{VIDEO\+\_\+\+SHOW\+\_\+\+PAGE}}~5
+\item 
+\#define \mbox{\hyperlink{mainwindow_8cpp_af67bf480f2ed25b39034f15b8d13a079}{NO\+\_\+\+FLASH\+\_\+\+DETECTED}}~0
+\item 
+\#define \mbox{\hyperlink{mainwindow_8cpp_a20926d3e7f0c38456edbb5d97ed3e8f3}{FLASH\+\_\+\+DETECTED}}~1
+\item 
+\#define \mbox{\hyperlink{mainwindow_8cpp_a7ed6a6db7ec466a04b820f3de267708a}{MAX\+\_\+\+VOLUME}}~100
+\item 
+\#define \mbox{\hyperlink{mainwindow_8cpp_aaec32701bf16879bd71fdddc223959c6}{MIN\+\_\+\+VOLUME}}~0
+\item 
+\#define \mbox{\hyperlink{mainwindow_8cpp_afd5d37ca1e17b8d112be4ad3d3f13bc2}{BLUETOOTH\+\_\+\+CONNECTED}}~1
+\item 
+\#define \mbox{\hyperlink{mainwindow_8cpp_a8b9de4eed6291ecce6da5ed21fd3eb82}{BLUETOOTH\+\_\+\+NOT\+\_\+\+CONNECTED}}~2
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{mainwindow_8cpp_a6c4b1dcee833037113ab8569bf657fd8}{initial\+Commands}} (void)
+\item 
+string \mbox{\hyperlink{mainwindow_8cpp_adf827a4bd32c45f51a5319c9a352d8c4}{extract\+Usb}} (string devices)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{mainwindow_8cpp_aeb47d83f5490d882ddb33149fc9fad05}{current\+Volume}} = 50
+\item 
+int \mbox{\hyperlink{mainwindow_8cpp_aea71d275500454e828704e610e355410}{volume\+Step}} = 10
+\item 
+int \mbox{\hyperlink{mainwindow_8cpp_ad1353fda5ca4863af45a3bc2808fa7e6}{flash\+Status}} = \mbox{\hyperlink{mainwindow_8cpp_af67bf480f2ed25b39034f15b8d13a079}{NO\+\_\+\+FLASH\+\_\+\+DETECTED}}
+\item 
+string \mbox{\hyperlink{mainwindow_8cpp_af3a1034fa2c23caeffd11c706dd7b029}{songs\+Ext}} = \char`\"{}.mp3\char`\"{}
+\item 
+int \mbox{\hyperlink{mainwindow_8cpp_a9862fc72815bfbaf44bde363323367c7}{playing\+Song\+Flag}} = 0
+\item 
+string \mbox{\hyperlink{mainwindow_8cpp_a55398569c52811f83778f09d1927c277}{videos\+Ext}} = \char`\"{}.mp4\char`\"{}
+\item 
+int \mbox{\hyperlink{mainwindow_8cpp_a9f0ddce99bc0e0f3ada159bb735f3609}{playing\+Video\+Flag}} = 0
+\item 
+long long int \mbox{\hyperlink{mainwindow_8cpp_a2929c3fa673445c8f427c4408990758d}{video\+Step}} = 10000
+\item 
+int \mbox{\hyperlink{mainwindow_8cpp_a5e3f7e58bdbbe574c8513d6194df56ed}{bluetooth\+Device\+Connected}} = \mbox{\hyperlink{mainwindow_8cpp_a8b9de4eed6291ecce6da5ed21fd3eb82}{BLUETOOTH\+\_\+\+NOT\+\_\+\+CONNECTED}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{mainwindow_8cpp_afd5d37ca1e17b8d112be4ad3d3f13bc2}\label{mainwindow_8cpp_afd5d37ca1e17b8d112be4ad3d3f13bc2}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!BLUETOOTH\_CONNECTED@{BLUETOOTH\_CONNECTED}}
+\index{BLUETOOTH\_CONNECTED@{BLUETOOTH\_CONNECTED}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{BLUETOOTH\_CONNECTED}{BLUETOOTH\_CONNECTED}}
+{\footnotesize\ttfamily \#define BLUETOOTH\+\_\+\+CONNECTED~1}
+
+
+
+Definition at line 30 of file mainwindow.\+cpp.
+
+\mbox{\Hypertarget{mainwindow_8cpp_a8b9de4eed6291ecce6da5ed21fd3eb82}\label{mainwindow_8cpp_a8b9de4eed6291ecce6da5ed21fd3eb82}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!BLUETOOTH\_NOT\_CONNECTED@{BLUETOOTH\_NOT\_CONNECTED}}
+\index{BLUETOOTH\_NOT\_CONNECTED@{BLUETOOTH\_NOT\_CONNECTED}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{BLUETOOTH\_NOT\_CONNECTED}{BLUETOOTH\_NOT\_CONNECTED}}
+{\footnotesize\ttfamily \#define BLUETOOTH\+\_\+\+NOT\+\_\+\+CONNECTED~2}
+
+
+
+Definition at line 31 of file mainwindow.\+cpp.
+
+\mbox{\Hypertarget{mainwindow_8cpp_a43f27ae9c496ba5bc82f1bfe134ac1d9}\label{mainwindow_8cpp_a43f27ae9c496ba5bc82f1bfe134ac1d9}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!BLUETOOTH\_PAGE\_INDEX@{BLUETOOTH\_PAGE\_INDEX}}
+\index{BLUETOOTH\_PAGE\_INDEX@{BLUETOOTH\_PAGE\_INDEX}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{BLUETOOTH\_PAGE\_INDEX}{BLUETOOTH\_PAGE\_INDEX}}
+{\footnotesize\ttfamily \#define BLUETOOTH\+\_\+\+PAGE\+\_\+\+INDEX~3}
+
+
+
+Definition at line 18 of file mainwindow.\+cpp.
+
+\mbox{\Hypertarget{mainwindow_8cpp_aed8d7cd911f58c9d7a527cf8e3f937bf}\label{mainwindow_8cpp_aed8d7cd911f58c9d7a527cf8e3f937bf}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!COMMAND\_SUCCEDED@{COMMAND\_SUCCEDED}}
+\index{COMMAND\_SUCCEDED@{COMMAND\_SUCCEDED}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{COMMAND\_SUCCEDED}{COMMAND\_SUCCEDED}}
+{\footnotesize\ttfamily \#define COMMAND\+\_\+\+SUCCEDED~0}
+
+
+
+Definition at line 12 of file mainwindow.\+cpp.
+
+\mbox{\Hypertarget{mainwindow_8cpp_a20926d3e7f0c38456edbb5d97ed3e8f3}\label{mainwindow_8cpp_a20926d3e7f0c38456edbb5d97ed3e8f3}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!FLASH\_DETECTED@{FLASH\_DETECTED}}
+\index{FLASH\_DETECTED@{FLASH\_DETECTED}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{FLASH\_DETECTED}{FLASH\_DETECTED}}
+{\footnotesize\ttfamily \#define FLASH\+\_\+\+DETECTED~1}
+
+
+
+Definition at line 24 of file mainwindow.\+cpp.
+
+\mbox{\Hypertarget{mainwindow_8cpp_a98002e0b286baafa476b88720200796c}\label{mainwindow_8cpp_a98002e0b286baafa476b88720200796c}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!HOME\_PAGE\_INDEX@{HOME\_PAGE\_INDEX}}
+\index{HOME\_PAGE\_INDEX@{HOME\_PAGE\_INDEX}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{HOME\_PAGE\_INDEX}{HOME\_PAGE\_INDEX}}
+{\footnotesize\ttfamily \#define HOME\+\_\+\+PAGE\+\_\+\+INDEX~0}
+
+
+
+Definition at line 15 of file mainwindow.\+cpp.
+
+\mbox{\Hypertarget{mainwindow_8cpp_a7ed6a6db7ec466a04b820f3de267708a}\label{mainwindow_8cpp_a7ed6a6db7ec466a04b820f3de267708a}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!MAX\_VOLUME@{MAX\_VOLUME}}
+\index{MAX\_VOLUME@{MAX\_VOLUME}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_VOLUME}{MAX\_VOLUME}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+VOLUME~100}
+
+
+
+Definition at line 25 of file mainwindow.\+cpp.
+
+\mbox{\Hypertarget{mainwindow_8cpp_aaec32701bf16879bd71fdddc223959c6}\label{mainwindow_8cpp_aaec32701bf16879bd71fdddc223959c6}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!MIN\_VOLUME@{MIN\_VOLUME}}
+\index{MIN\_VOLUME@{MIN\_VOLUME}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{MIN\_VOLUME}{MIN\_VOLUME}}
+{\footnotesize\ttfamily \#define MIN\+\_\+\+VOLUME~0}
+
+
+
+Definition at line 26 of file mainwindow.\+cpp.
+
+\mbox{\Hypertarget{mainwindow_8cpp_ae9b3d8a4a538f0b191c5b186f2077a9c}\label{mainwindow_8cpp_ae9b3d8a4a538f0b191c5b186f2077a9c}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!MUSIC\_PAGE\_INDEX@{MUSIC\_PAGE\_INDEX}}
+\index{MUSIC\_PAGE\_INDEX@{MUSIC\_PAGE\_INDEX}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{MUSIC\_PAGE\_INDEX}{MUSIC\_PAGE\_INDEX}}
+{\footnotesize\ttfamily \#define MUSIC\+\_\+\+PAGE\+\_\+\+INDEX~2}
+
+
+
+Definition at line 17 of file mainwindow.\+cpp.
+
+\mbox{\Hypertarget{mainwindow_8cpp_af67bf480f2ed25b39034f15b8d13a079}\label{mainwindow_8cpp_af67bf480f2ed25b39034f15b8d13a079}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!NO\_FLASH\_DETECTED@{NO\_FLASH\_DETECTED}}
+\index{NO\_FLASH\_DETECTED@{NO\_FLASH\_DETECTED}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{NO\_FLASH\_DETECTED}{NO\_FLASH\_DETECTED}}
+{\footnotesize\ttfamily \#define NO\+\_\+\+FLASH\+\_\+\+DETECTED~0}
+
+
+
+Definition at line 23 of file mainwindow.\+cpp.
+
+\mbox{\Hypertarget{mainwindow_8cpp_ad69d4deb64540b967bbbecf0c8ca597d}\label{mainwindow_8cpp_ad69d4deb64540b967bbbecf0c8ca597d}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!SETTINGS\_PAGE\_INDEX@{SETTINGS\_PAGE\_INDEX}}
+\index{SETTINGS\_PAGE\_INDEX@{SETTINGS\_PAGE\_INDEX}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{SETTINGS\_PAGE\_INDEX}{SETTINGS\_PAGE\_INDEX}}
+{\footnotesize\ttfamily \#define SETTINGS\+\_\+\+PAGE\+\_\+\+INDEX~4}
+
+
+
+Definition at line 19 of file mainwindow.\+cpp.
+
+\mbox{\Hypertarget{mainwindow_8cpp_a0dc4af3a1751521eb794a5dac7e16aed}\label{mainwindow_8cpp_a0dc4af3a1751521eb794a5dac7e16aed}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!VIDEO\_PAGE\_INDEX@{VIDEO\_PAGE\_INDEX}}
+\index{VIDEO\_PAGE\_INDEX@{VIDEO\_PAGE\_INDEX}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{VIDEO\_PAGE\_INDEX}{VIDEO\_PAGE\_INDEX}}
+{\footnotesize\ttfamily \#define VIDEO\+\_\+\+PAGE\+\_\+\+INDEX~1}
+
+
+
+Definition at line 16 of file mainwindow.\+cpp.
+
+\mbox{\Hypertarget{mainwindow_8cpp_ac6ba115e9f4e74f695c41b76a605e0ba}\label{mainwindow_8cpp_ac6ba115e9f4e74f695c41b76a605e0ba}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!VIDEO\_SHOW\_PAGE@{VIDEO\_SHOW\_PAGE}}
+\index{VIDEO\_SHOW\_PAGE@{VIDEO\_SHOW\_PAGE}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{VIDEO\_SHOW\_PAGE}{VIDEO\_SHOW\_PAGE}}
+{\footnotesize\ttfamily \#define VIDEO\+\_\+\+SHOW\+\_\+\+PAGE~5}
+
+
+
+Definition at line 20 of file mainwindow.\+cpp.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{mainwindow_8cpp_adf827a4bd32c45f51a5319c9a352d8c4}\label{mainwindow_8cpp_adf827a4bd32c45f51a5319c9a352d8c4}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!extractUsb@{extractUsb}}
+\index{extractUsb@{extractUsb}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{extractUsb()}{extractUsb()}}
+{\footnotesize\ttfamily string extract\+Usb (\begin{DoxyParamCaption}\item[{string}]{devices }\end{DoxyParamCaption})}
+
+
+
+Definition at line 228 of file mainwindow.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{mainwindow_8cpp_adf827a4bd32c45f51a5319c9a352d8c4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{mainwindow_8cpp_a6c4b1dcee833037113ab8569bf657fd8}\label{mainwindow_8cpp_a6c4b1dcee833037113ab8569bf657fd8}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!initialCommands@{initialCommands}}
+\index{initialCommands@{initialCommands}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{initialCommands()}{initialCommands()}}
+{\footnotesize\ttfamily void initial\+Commands (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 214 of file mainwindow.\+cpp.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mainwindow_8cpp_a6c4b1dcee833037113ab8569bf657fd8_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{mainwindow_8cpp_a5e3f7e58bdbbe574c8513d6194df56ed}\label{mainwindow_8cpp_a5e3f7e58bdbbe574c8513d6194df56ed}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!bluetoothDeviceConnected@{bluetoothDeviceConnected}}
+\index{bluetoothDeviceConnected@{bluetoothDeviceConnected}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{bluetoothDeviceConnected}{bluetoothDeviceConnected}}
+{\footnotesize\ttfamily int bluetooth\+Device\+Connected = \mbox{\hyperlink{mainwindow_8cpp_a8b9de4eed6291ecce6da5ed21fd3eb82}{BLUETOOTH\+\_\+\+NOT\+\_\+\+CONNECTED}}}
+
+
+
+Definition at line 50 of file mainwindow.\+cpp.
+
+\mbox{\Hypertarget{mainwindow_8cpp_aeb47d83f5490d882ddb33149fc9fad05}\label{mainwindow_8cpp_aeb47d83f5490d882ddb33149fc9fad05}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!currentVolume@{currentVolume}}
+\index{currentVolume@{currentVolume}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{currentVolume}{currentVolume}}
+{\footnotesize\ttfamily int current\+Volume = 50}
+
+
+
+Definition at line 34 of file mainwindow.\+cpp.
+
+\mbox{\Hypertarget{mainwindow_8cpp_ad1353fda5ca4863af45a3bc2808fa7e6}\label{mainwindow_8cpp_ad1353fda5ca4863af45a3bc2808fa7e6}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!flashStatus@{flashStatus}}
+\index{flashStatus@{flashStatus}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{flashStatus}{flashStatus}}
+{\footnotesize\ttfamily int flash\+Status = \mbox{\hyperlink{mainwindow_8cpp_af67bf480f2ed25b39034f15b8d13a079}{NO\+\_\+\+FLASH\+\_\+\+DETECTED}}}
+
+
+
+Definition at line 38 of file mainwindow.\+cpp.
+
+\mbox{\Hypertarget{mainwindow_8cpp_a9862fc72815bfbaf44bde363323367c7}\label{mainwindow_8cpp_a9862fc72815bfbaf44bde363323367c7}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!playingSongFlag@{playingSongFlag}}
+\index{playingSongFlag@{playingSongFlag}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{playingSongFlag}{playingSongFlag}}
+{\footnotesize\ttfamily int playing\+Song\+Flag = 0}
+
+
+
+Definition at line 42 of file mainwindow.\+cpp.
+
+\mbox{\Hypertarget{mainwindow_8cpp_a9f0ddce99bc0e0f3ada159bb735f3609}\label{mainwindow_8cpp_a9f0ddce99bc0e0f3ada159bb735f3609}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!playingVideoFlag@{playingVideoFlag}}
+\index{playingVideoFlag@{playingVideoFlag}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{playingVideoFlag}{playingVideoFlag}}
+{\footnotesize\ttfamily int playing\+Video\+Flag = 0}
+
+
+
+Definition at line 46 of file mainwindow.\+cpp.
+
+\mbox{\Hypertarget{mainwindow_8cpp_af3a1034fa2c23caeffd11c706dd7b029}\label{mainwindow_8cpp_af3a1034fa2c23caeffd11c706dd7b029}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!songsExt@{songsExt}}
+\index{songsExt@{songsExt}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{songsExt}{songsExt}}
+{\footnotesize\ttfamily string songs\+Ext = \char`\"{}.mp3\char`\"{}}
+
+
+
+Definition at line 41 of file mainwindow.\+cpp.
+
+\mbox{\Hypertarget{mainwindow_8cpp_a55398569c52811f83778f09d1927c277}\label{mainwindow_8cpp_a55398569c52811f83778f09d1927c277}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!videosExt@{videosExt}}
+\index{videosExt@{videosExt}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{videosExt}{videosExt}}
+{\footnotesize\ttfamily string videos\+Ext = \char`\"{}.mp4\char`\"{}}
+
+
+
+Definition at line 45 of file mainwindow.\+cpp.
+
+\mbox{\Hypertarget{mainwindow_8cpp_a2929c3fa673445c8f427c4408990758d}\label{mainwindow_8cpp_a2929c3fa673445c8f427c4408990758d}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!videoStep@{videoStep}}
+\index{videoStep@{videoStep}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{videoStep}{videoStep}}
+{\footnotesize\ttfamily long long int video\+Step = 10000}
+
+
+
+Definition at line 47 of file mainwindow.\+cpp.
+
+\mbox{\Hypertarget{mainwindow_8cpp_aea71d275500454e828704e610e355410}\label{mainwindow_8cpp_aea71d275500454e828704e610e355410}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!volumeStep@{volumeStep}}
+\index{volumeStep@{volumeStep}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{volumeStep}{volumeStep}}
+{\footnotesize\ttfamily int volume\+Step = 10}
+
+
+
+Definition at line 37 of file mainwindow.\+cpp.
+

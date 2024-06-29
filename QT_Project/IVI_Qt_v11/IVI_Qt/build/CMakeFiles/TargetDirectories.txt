@@ -1,0 +1,8 @@
+/home/hoda/IVI_Qt/build/CMakeFiles/IVI_Qt.dir
+/home/hoda/IVI_Qt/build/CMakeFiles/edit_cache.dir
+/home/hoda/IVI_Qt/build/CMakeFiles/rebuild_cache.dir
+/home/hoda/IVI_Qt/build/CMakeFiles/list_install_components.dir
+/home/hoda/IVI_Qt/build/CMakeFiles/install.dir
+/home/hoda/IVI_Qt/build/CMakeFiles/install/local.dir
+/home/hoda/IVI_Qt/build/CMakeFiles/install/strip.dir
+/home/hoda/IVI_Qt/build/CMakeFiles/IVI_Qt_autogen.dir

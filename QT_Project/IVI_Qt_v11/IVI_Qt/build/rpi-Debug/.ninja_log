@@ -1,0 +1,20 @@
+# ninja log v5
+0	1056	1719648495019755929	IVI_Qt_autogen/timestamp	9aa1cf5d1a4b5d10
+0	1056	1719648495019755929	IVI_Qt_autogen/mocs_compilation.cpp	9aa1cf5d1a4b5d10
+0	1056	1719648495019755929	/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/build/rpi-Debug/IVI_Qt_autogen/timestamp	9aa1cf5d1a4b5d10
+0	1056	1719648495019755929	/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/build/rpi-Debug/IVI_Qt_autogen/mocs_compilation.cpp	9aa1cf5d1a4b5d10
+1056	1079	1719648495055756236	IVI_Qt_autogen/EWIEGA46WW/qrc_musicfiles.cpp	a3e1ed2fd668c560
+1056	1079	1719648495055756236	/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/build/rpi-Debug/IVI_Qt_autogen/EWIEGA46WW/qrc_musicfiles.cpp	a3e1ed2fd668c560
+1056	1239	1719648495207757532	IVI_Qt_autogen/EWIEGA46WW/qrc_background.cpp	c86671fd9a894084
+1056	1239	1719648495207757532	/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/build/rpi-Debug/IVI_Qt_autogen/EWIEGA46WW/qrc_background.cpp	c86671fd9a894084
+1057	1240	1719648495211757566	IVI_Qt_autogen/EWIEGA46WW/qrc_icons.cpp	d45ac8d96a923327
+1057	1240	1719648495211757566	/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/build/rpi-Debug/IVI_Qt_autogen/EWIEGA46WW/qrc_icons.cpp	d45ac8d96a923327
+1248	1772	1719648495747762137	CMakeFiles/IVI_Qt.dir/IVI_Qt_autogen/EWIEGA46WW/qrc_musicfiles.cpp.o	a7e2ffdee9e0daa
+1243	4436	1719648498415784884	CMakeFiles/IVI_Qt.dir/systeminterface.cpp.o	e14a17e1f0efbaa4
+1245	12942	1719648506903857229	CMakeFiles/IVI_Qt.dir/IVI_Qt_autogen/EWIEGA46WW/qrc_background.cpp.o	fe4f23a336d43562
+1240	15692	1719648509667880780	CMakeFiles/IVI_Qt.dir/IVI_Qt_autogen/mocs_compilation.cpp.o	bdd001729d3cadb
+1772	15779	1719648509743881427	CMakeFiles/IVI_Qt.dir/IVI_Qt_autogen/EWIEGA46WW/qrc_icons.cpp.o	8eb1389661552fcc
+1241	16083	1719648510039883949	CMakeFiles/IVI_Qt.dir/main.cpp.o	3b1735ac71ba7302
+1241	33164	1719648527132029495	CMakeFiles/IVI_Qt.dir/mainwindow.cpp.o	d9e573c5fc3c159c
+33164	34673	1719648528644042363	IVI_Qt	2f568d9bd3bf8b1a
+34673	34702	0	CMakeFiles/install.util	8b8062d874ef90a6

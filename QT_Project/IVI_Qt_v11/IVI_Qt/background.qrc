@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/mainBG">
+        <file>media/blurredBlue.jpg</file>
+        <file>media/colorfulBackground.jpeg</file>
+        <file>media/darkBackground.png</file>
+        <file>media/blue-wallpaper-preview.jpg</file>
+        <file>media/purple.jpg</file>
+        <file>media/ac.png</file>
+        <file>media/colorful.jpg</file>
+        <file>media/galaxy.jpg</file>
+        <file>media/pattern.png</file>
+        <file>media/sporty.jpg</file>
+    </qresource>
+</RCC>

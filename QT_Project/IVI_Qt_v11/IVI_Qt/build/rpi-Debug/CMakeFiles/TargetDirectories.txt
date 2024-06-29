@@ -1,0 +1,9 @@
+/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/build/rpi-Debug/CMakeFiles/IVI_Qt.dir
+/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/build/rpi-Debug/CMakeFiles/edit_cache.dir
+/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/build/rpi-Debug/CMakeFiles/rebuild_cache.dir
+/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/build/rpi-Debug/CMakeFiles/list_install_components.dir
+/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/build/rpi-Debug/CMakeFiles/install.dir
+/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/build/rpi-Debug/CMakeFiles/install/local.dir
+/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/build/rpi-Debug/CMakeFiles/install/strip.dir
+/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/build/rpi-Debug/CMakeFiles/IVI_Qt_autogen_timestamp_deps.dir
+/home/anas/Downloads/IVI_Qt_v11/IVI_Qt/build/rpi-Debug/CMakeFiles/IVI_Qt_autogen.dir

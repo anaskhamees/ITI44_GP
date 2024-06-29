@@ -1,0 +1,31 @@
+{
+	"BUILD_DIR" : "/home/hoda/IVI_Qt/build/IVI_Qt_autogen",
+	"CMAKE_BINARY_DIR" : "/home/hoda/IVI_Qt/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/hoda/IVI_Qt/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/hoda/IVI_Qt",
+	"CMAKE_SOURCE_DIR" : "/home/hoda/IVI_Qt",
+	"INCLUDE_DIR" : "/home/hoda/IVI_Qt/build/IVI_Qt_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/hoda/IVI_Qt/media/ac.png",
+		"/home/hoda/IVI_Qt/media/colorful.jpg",
+		"/home/hoda/IVI_Qt/media/colorfulBackground.jpeg",
+		"/home/hoda/IVI_Qt/media/pattern.png",
+		"/home/hoda/IVI_Qt/media/sporty.jpg",
+		"/home/hoda/IVI_Qt/media/darkBackground.png",
+		"/home/hoda/IVI_Qt/media/blue-wallpaper-preview.jpg",
+		"/home/hoda/IVI_Qt/media/blurredBlue.jpg",
+		"/home/hoda/IVI_Qt/media/purple.jpg",
+		"/home/hoda/IVI_Qt/media/galaxy.jpg"
+	],
+	"LOCK_FILE" : "/home/hoda/IVI_Qt/build/CMakeFiles/IVI_Qt_autogen.dir/AutoRcc_background_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "background" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_background.cpp",
+	"RCC_EXECUTABLE" : "/home/hoda/Qt/5.15.2/gcc_64/bin/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/hoda/IVI_Qt/build/CMakeFiles/IVI_Qt_autogen.dir/AutoRcc_background_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/home/hoda/IVI_Qt/background.qrc",
+	"VERBOSITY" : 0
+}
