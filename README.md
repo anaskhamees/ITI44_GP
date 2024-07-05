@@ -17,19 +17,28 @@ automotive technologies like ADAS systems, V2X connectivity solutions, telematic
 
 Modern in-vehicle systems are truly adding a luxurious touch to vehicles and offering an interactive experience to the driver. Besides playing your favorite song tracks or watching relaxing YouTube videos, you can now also get real-time traffic updates and call/text your loved ones without doing anything. [more](https://www.einfochips.com/blog/everything-you-need-to-know-about-in-vehicle-infotainment-system/).
 
-## Project Features
+## 1. Project Features
+
+#### Our **IVI** system contain
+
+- **Audio**
+- **Video**
+- **Bluetooth**
+- **WiFi**
+- **Calender**
+- **GUI Calculator**
+- **Air conditioner** 
+- **Settings** : change the theme ,date, time.....etc
 
 
 
 
 
-
-
-## Build Linux Image
+## 2. Build Linux Image
 
 >Make Sure that you have 150 GB free space in your system
 
-### 1. Download the Layers and BSP
+### 2.1. Download the Layers and BSP
 
 - Create directory called "**yocto**"
 
@@ -75,7 +84,7 @@ git clone -b kirkstone https://github.com/meta-qt5/meta-qt5
 
   ![image-20240618033047484](GP.assets/image-20240618033047484.png)
 
-### 2. Add the Layers in *bblayer.conf* file
+### 2.2. Add the Layers in *bblayer.conf* file
 
 ```c
 "/ABSOLUTE/PATH/poky/meta \
@@ -153,9 +162,9 @@ git clone -b kirkstone https://github.com/meta-qt5/meta-qt5
 
 
 
-## 3.2. General Configuration
+#### 3.2. General Configuration
 
-### 1. Core System Configuration
+#### 3.2.1. Core System Configuration
 
 ```bash
 CONF_VERSION = "2"
@@ -178,8 +187,10 @@ IMAGE_ROOTFS_EXTRA_SPACE = "5242880"
 ### 2. QT Configuration
 
 ```bash
+#QT configuration
 IMAGE_INSTALL:append = " make cmake"
-IMAGE_INSTALL:append = " qtbase-tools qtbase qtdeclarative qtimageformats qtmultimedia qtquickcontrols2 qtquickcontrols qtbase-plugins cinematicexperience liberation-fonts"
+IMAGE_INSTALL:append = " qtbase-tools qtbase qtdeclarative qtimageformats qtmultimedia qtquickcontrols2 qtquickcontrols qtbase-plugins cinematicexperience liberation-fonts qtbase-dev curl wget userland gstreamer1.0-plugins-bad qtsvg"
+DISTRO_FEATURES:append = " x11 opengl wayland"
 PACKAGECONFIG_FONTS:pn-qtbase = " fontconfig"
 ```
 
@@ -197,11 +208,20 @@ PACKAGECONFIG:pn-qtmultimedia = " gstreamer alsa"
 - Installs GStreamer plugins for MP3 support (`good`, `base`, `ugly`).
 - Accepts commercial licenses for the specified plugins.
 
-### 4. Bluetooth and Audio Configuration
+### 4. Audio Configuration
 
 ```bash
-DISTRO_FEATURES:append = " pulseaudio"
-IMAGE_INSTALL:append = " pulseaudio pulseaudio-module-dbus-protocol pulseaudio-server pulseaudio-module-bluetooth-discover pulseaudio-module-bluetooth-policy pulseaudio-module-bluez5-device pulseaudio-module-bluez5-discover alsa-utils alsa-plugins"
+IMAGE_INSTALL:append = "gstreamer1.0-plugins-good gstreamer1.0-plugins-base gstreamer1.0-plugins-ugly mpg123 pulseaudio pulseaudio-module-dbus-protocol pulseaudio-server pulseaudio-module-bluetooth-discover pulseaudio-module-bluetooth-policy pulseaudio-module-bluez5-device pulseaudio-module-bluez5-discover alsa-utils alsa-lib alsa-plugins alsa-tools alsa-state dbus"
+LICENSE_FLAGS_ACCEPTED:append = "commercial commercial_gstreamer1.0-plugins-ugly"
+PACKAGECONFIG:pn-qtmultimedia = "gstreamer alsa"
+#IMAGE_INSTALL:append = "chromium"
+#stream mp3 by bluetooth
+
+DISTRO_FEATURES:append = "pulseaudio"
+
+KERNEL_MODULE_AUTOLOAD:rpi = "snd-bcm2835"
+MACHINE_FEATURES:append = "sound"
+
 ```
 
 - Adds `pulseaudio` and related modules for audio support.
@@ -219,7 +239,7 @@ EXTRA_IMAGE_FEATURES += "tools-debug"
 ### 6. Bluetooth and Wi-Fi Tools
 
 ```bash
-bashCopy codeIMAGE_INSTALL:append = " \
+MAGE_INSTALL:append = " \
     python3 \
     util-linux \
     bluez5 \
@@ -231,13 +251,22 @@ bashCopy codeIMAGE_INSTALL:append = " \
     pi-bluetooth \
     bluez5-testtools \
     udev-rules-rpi \
+    linux-firmware \
+    iw \
+    kernel-modules \
     linux-firmware-ralink \
     linux-firmware-rtl8192ce \
     linux-firmware-rtl8192cu \
     linux-firmware-rtl8192su \
     linux-firmware-rpidistro-bcm43430 \
+    linux-firmware-bcm43430 \
+    connman \
+    connman-client \
+    dhcpcd \
+    openssh \
     psplash \
     psplash-raspberrypi \
+    coreutils \
 "
 ```
 
@@ -252,6 +281,9 @@ DISTRO_FEATURES:append = " \
     wifi \
     pi-bluetooth \
     linux-firmware-bcm43430 \
+    systemd \
+    usrmerge \
+    ipv4 \
 "
 
 MACHINE_FEATURES:append = " \
@@ -263,13 +295,12 @@ IMAGE_FEATURES:append = " \
     splash \
 "
 IMAGE_INSTALL:append = " xserver-xorg xf86-video-fbdev xf86-input-evdev xterm matchbox-wm"
+
 ```
 
 - Extends distribution features (`bluez5`, `bluetooth`, `wifi`, etc.) and machine-specific features (`bluetooth`, `wifi`).
 - Adds image features (`splash`).
 - Installs X server components (`xserver-xorg`, `xf86-video-fbdev`, etc.).
-
-### 
 
 ## My Local.conf File
 
@@ -554,6 +585,9 @@ PACKAGECONFIG:append:pn-qemu-system-native = " sdl"
 
 CONF_VERSION = "2"
 
+PACKAGE_CLASSES ?= "package_rpm opkg"
+IMAGE_INSTALL:append = " opkg"
+
 DISTRO_FEATURES:append = " systemd"
 DISTRO_FEATURES_BACKFILL_CONSIDERED += "sysvinit"
 VIRTUAL-RUNTIME_init_manager = "systemd"
@@ -564,24 +598,32 @@ IMAGE_INSTALL:append = " x11vnc"
 
 #QT configuration
 IMAGE_INSTALL:append = " make cmake"
-IMAGE_INSTALL:append = " qtbase-tools qtbase qtdeclarative qtimageformats qtmultimedia qtquickcontrols2 qtquickcontrols qtbase-plugins cinematicexperience liberation-fonts"
+IMAGE_INSTALL:append = " qtbase-tools qtbase qtdeclarative qtimageformats qtmultimedia qtquickcontrols2 qtquickcontrols qtbase-plugins cinematicexperience liberation-fonts qtbase-dev curl wget userland gstreamer1.0-plugins-bad"
+IMAGE_INSTALL:remove = "qtwebengine"
 PACKAGECONFIG_FONTS:pn-qtbase = " fontconfig"
 IMAGE_INSTALL:append = " openssh-sftp-server rsync"
+IMAGE_INSTALL:append = "  python3-modules python3-misc python3-dev"
+LAYERSERIES_COMPAT_meta-python2 = " kirkstone"
+
+DISTRO_FEATURES:append = " x11 opengl wayland"
 
 #MP3 Config
+IMAGE_INSTALL:append = " gstreamer1.0-plugins-good gstreamer1.0-plugins-base gstreamer1.0-plugins-ugly mpg123"
 
-IMAGE_INSTALL:append = " gstreamer1.0-plugins-good gstreamer1.0-plugins-base gstreamer1.0-plugins-ugly"
-LICENSE_FLAGS_ACCEPTED:append = " commercial  commercial_gstreamer1.0-plugins-ugly commercial_gstreamer1.0-plugins-ugly"
+LICENSE_FLAGS_ACCEPTED:append = " commercial commercial_gstreamer1.0-plugins-ugly"
 PACKAGECONFIG:pn-qtmultimedia = " gstreamer alsa" 
 
 #stream mp3 by blutooth
-
 DISTRO_FEATURES:append = " pulseaudio"
-IMAGE_INSTALL:append = " pulseaudio pulseaudio-module-dbus-protocol pulseaudio-server pulseaudio-module-bluetooth-discover pulseaudio-module-bluetooth-policy pulseaudio-module-bluez5-device pulseaudio-module-bluez5-discover alsa-utils alsa-plugins"
+
+KERNEL_MODULE_AUTOLOAD:rpi = "snd-bcm2835"
+MACHINE_FEATURES:append = " sound"
+
+IMAGE_INSTALL:append = " pulseaudio pulseaudio-module-dbus-protocol pulseaudio-server pulseaudio-module-bluetooth-discover pulseaudio-module-bluetooth-policy pulseaudio-module-bluez5-device pulseaudio-module-bluez5-discover alsa-utils alsa-lib alsa-plugins mpg123 alsa-tools alsa-state dbus"
 
 #for debugging 
 IMAGE_INSTALL:append = " strace"
-
+IMAGE_INSTALL:append = " qtsvg"
 #for blutooth and Wifi
 
 IMAGE_INSTALL:append = " \
@@ -611,6 +653,7 @@ IMAGE_INSTALL:append = " \
     openssh \
     psplash \
     psplash-raspberrypi \
+    coreutils \
 "
 
 DISTRO_FEATURES:append = " \
@@ -643,6 +686,7 @@ PARALLEL_MAKE = "-j 4"
 
 IMAGE_FSTYPES = "tar.bz2 ext4 rpi-sdimg"
 
+
 ```
 
 
@@ -653,7 +697,7 @@ IMAGE_FSTYPES = "tar.bz2 ext4 rpi-sdimg"
 bitbake core-image-sato -k
 ```
 
->For Create **SDK** Run :
+>For Create **SDK** Run : (**mandatory if the you will use remote deploy with Qt**)
 >
 >```bash
 >bitbake core-image-sato -c populate_sdk
@@ -705,11 +749,25 @@ sudo dd bs=4M if=core-image-sato-raspberrypi3-64.wic of=/dev/sdc status=progress
 
 ![image-20240618034456567](GP.assets/image-20240618034456567.png)
 
+### OR
 
+![image-20240705181417924](README.assets/image-20240705181417924.png)
 
-## WIFI Configuration on RPI 3 B+
+if you will use **.rpi-sdimg** extension , you should use : 
 
-Go to RPI and open the terminal 
+```
+sudo dd bs=4M if=core-image-sato-raspberrypi3-64.rpi-sdimg of=/dev/sdc status=progress conv=fsync 
+```
+
+- **For remove Rpi logo in booting stage** :
+
+  go to *boot partition of rpi* and open **cmdline.txt** file and add the below
+
+  ![Screenshot_from_2024-06-26_21-27-44](README.assets/Screenshot_from_2024-06-26_21-27-44.png)
+
+## 6. WiFi Configuration on RPI 3 B+
+
+Go to RPI and connect display and keyboard with rpi then open the terminal 
 
 - check WIFI driver
 
@@ -721,7 +779,7 @@ Go to RPI and open the terminal
 
 
 
-## 1. wpa supplicant tool
+## 6.1. wpa supplicant tool (option 1)
 
 - Edit the **wpa_supplicant.conf** in RPI (/etc/wpa_suppicant.conf)
 
@@ -759,7 +817,7 @@ Restart=on-failure
 WantedBy=multi-user.target
 ```
 
-- After that run those commands
+- After that run those commands on **rpi terminal**
 
   ```bash
   systemctl enable wpa_supplicant
@@ -768,25 +826,15 @@ WantedBy=multi-user.target
 
   After that when boot the RPI the wifi will connect automatically 
 
-- 
+  
 
-## 2. Connman Tool (option 2)
+## 6.2. Connman Tool (option 2)
 
 ![image-20240626072659444]( README.assets/image-20240626072659444.png)
 
 ![image-20240626072922794](README.assets/image-20240626072922794.png)
 
 
-
-
-
-
-
----------------------------------------------------------------------------------------------------------------------
-
-
-
-### Do not read the below now >> Anas Will Edit it later
 
 
 
@@ -817,9 +865,12 @@ To start the ConnMan service, discover Wi-Fi networks, and connect to a specific
 
    This command opens the ConnMan interactive shell.
 
+   ![image-20240626080432052](README.assets/image-20240626080432052.png)
+
 2. **Scan for Wi-Fi Networks:** Inside the ConnMan interactive shell, run the following commands:
 
    ```
+    enable wifi
    scan wifi
    services
    ```
@@ -859,21 +910,460 @@ To start the ConnMan service, discover Wi-Fi networks, and connect to a specific
 
 
 
+## 7. Configure the sound settings in rpi 
+
+The default sound routing goes to the HDMI device inside of the audio jack. Since our
+HDMI device doesn’t support audio playing, we had to change the default sound routing
+from HDMI to audio jack.
+
+1. Open  **/etc/asound.conf**
+
+2. Edit the file as follow :
+
+   ```bash
+   pcm.!default {
+   type hw
+   card 1
+   device 0
+   }
+   ctl.!default {
+   type hw
+   card 1
+   }
+   ```
+
+## 8. Configure the Bluetooth on rpi
+
+![image-20240705194737760](README.assets/image-20240705194737760.png)
 
 
 
+## 9. Create Script to Auto-mount the flash memory on rpi
+
+### 9.1. Step 1
+
+On rpi rootfs go to  **/usr/local/bin** directory and create  this script **usb-mount.sh**
+
+>**Do not forget to make the script file executable**
+>
+>```bash
+>sudo chmod +x usb-mount.sh
+>```
+>
+>to make sure run:
+>
+>```bash
+>ls -l usb-mount.sh
+>```
+>
+>![image-20240705184735508](README.assets/image-20240705184735508.png)
+
+```bash
+#!/bin/bash
+
+# This script is called from our systemd unit file to mount or unmount
+# a USB drive.
+
+usage()
+{
+    echo "Usage: $0 {add|remove} device_name (e.g. sdb1)"
+    exit 1
+}
+
+if [[ $# -ne 2 ]]; then
+    usage
+fi
+
+ACTION=$1
+DEVBASE=$2
+DEVICE="/dev/${DEVBASE}"
+
+# See if this drive is already mounted, and if so where
+MOUNT_POINT=$(/bin/mount | /bin/grep ${DEVICE} | /usr/bin/awk '{ print $3 }')
+
+do_mount()
+{
+    if [[ -n ${MOUNT_POINT} ]]; then
+        echo "Warning: ${DEVICE} is already mounted at ${MOUNT_POINT}"
+        exit 1
+    fi
+
+    # Get info for this drive: $ID_FS_LABEL, $ID_FS_UUID, and $ID_FS_TYPE
+    eval $(/sbin/blkid -o udev ${DEVICE})
+
+    # Figure out a mount point to use
+    LABEL=${ID_FS_LABEL}
+    if [[ -z "${LABEL}" ]]; then
+        LABEL=${DEVBASE}
+    elif /bin/grep -q " /media/${LABEL} " /etc/mtab; then
+        # Already in use, make a unique one
+        LABEL+="-${DEVBASE}"
+    fi
+    MOUNT_POINT="/media/${LABEL}"
+
+    echo "Mount point: ${MOUNT_POINT}"
+
+    /bin/mkdir -p ${MOUNT_POINT}
+
+    # Global mount options
+    OPTS="rw,relatime"
+
+    # File system type specific mount options
+    if [[ ${ID_FS_TYPE} == "vfat" ]]; then
+        OPTS+=",users,gid=100,umask=000,shortname=mixed,utf8=1,flush"
+    fi
+
+    if ! /bin/mount -o ${OPTS} ${DEVICE} ${MOUNT_POINT}; then
+        echo "Error mounting ${DEVICE} (status = $?)"
+        /bin/rmdir ${MOUNT_POINT}
+        exit 1
+    fi
+
+    echo "**** Mounted ${DEVICE} at ${MOUNT_POINT} ****"
+}
+
+do_unmount()
+{
+    if [[ -z ${MOUNT_POINT} ]]; then
+        echo "Warning: ${DEVICE} is not mounted"
+    else
+        /bin/umount -l ${DEVICE}
+        echo "**** Unmounted ${DEVICE}"
+    fi
+
+    # Delete all empty dirs in /media that aren't being used as mount
+    # points. This is kind of overkill, but if the drive was unmounted
+    # prior to removal we no longer know its mount point, and we don't
+    # want to leave it orphaned...
+    for f in /media/* ; do
+        if [[ -n $(/usr/bin/find "$f" -maxdepth 0 -type d -empty) ]]; then
+            if ! /bin/grep -q " $f " /etc/mtab; then
+                echo "**** Removing mount point $f"
+                /bin/rmdir "$f"
+            fi
+        fi
+    done
+}
+
+case "${ACTION}" in
+    add)
+        do_mount
+        ;;
+    remove)
+        do_unmount
+        ;;
+    *)
+        usage
+        ;;
+esac
+
+```
+
+### 9.1.1. usb-mount.sh Script explanation
+
+1. **Script Header and Usage Function:**
+
+   ```bash
+   #!/bin/bash
+   
+   # This script is called from our systemd unit file to mount or unmount
+   # a USB drive.
+   
+   usage()
+   {
+       echo "Usage: $0 {add|remove} device_name (e.g. sdb1)"
+       exit 1
+   }
+   ```
+
+   - This is a bash script meant to be executed by the shell.
+   - The `usage` function prints the correct usage of the script and exits with an error code.
+
+2. **Argument Check:**
+
+   ```bash
+   if [[ $# -ne 2 ]]; then
+       usage
+   fi
+   ```
+
+   - Checks if the script receives exactly two arguments. If not, it calls the `usage` function.
+
+3. **Assigning Variables:**
+
+   ```bash
+   ACTION=$1
+   DEVBASE=$2
+   DEVICE="/dev/${DEVBASE}"
+   ```
+
+   - Assigns the first argument to `ACTION` (expected to be either "add" or "remove").
+   - Assigns the second argument to `DEVBASE` (the device name, e.g., sdb1).
+   - Constructs the full device path and assigns it to `DEVICE`.
+
+4. **Check If Already Mounted:**
+
+   ```bash
+   MOUNT_POINT=$(/bin/mount | /bin/grep ${DEVICE} | /usr/bin/awk '{ print $3 }')
+   ```
+
+   - Uses the `mount` command to check if the device is already mounted and extracts the mount point if it is.
+
+5. **Mount Function:**
+
+   ```bash
+   do_mount()
+   {
+       if [[ -n ${MOUNT_POINT} ]]; then
+           echo "Warning: ${DEVICE} is already mounted at ${MOUNT_POINT}"
+           exit 1
+       fi
+   
+       eval $(/sbin/blkid -o udev ${DEVICE})
+   
+       LABEL=${ID_FS_LABEL}
+       if [[ -z "${LABEL}" ]]; then
+           LABEL=${DEVBASE}
+       elif /bin/grep -q " /media/${LABEL} " /etc/mtab; then
+           LABEL+="-${DEVBASE}"
+       fi
+       MOUNT_POINT="/media/${LABEL}"
+   
+       echo "Mount point: ${MOUNT_POINT}"
+   
+       /bin/mkdir -p ${MOUNT_POINT}
+   
+       OPTS="rw,relatime"
+       if [[ ${ID_FS_TYPE} == "vfat" ]]; then
+           OPTS+=",users,gid=100,umask=000,shortname=mixed,utf8=1,flush"
+       fi
+   
+       if ! /bin/mount -o ${OPTS} ${DEVICE} ${MOUNT_POINT}; then
+           echo "Error mounting ${DEVICE} (status = $?)"
+           /bin/rmdir ${MOUNT_POINT}
+           exit 1
+       fi
+   
+       echo "**** Mounted ${DEVICE} at ${MOUNT_POINT} ****"
+   }
+   ```
+
+   - Checks if the device is already mounted and exits with a warning if it is.
+   - Uses `blkid` to get the filesystem label, UUID, and type.
+   - Determines a unique mount point under `/media/` using the label or device base name.
+   - Creates the mount point directory.
+   - Sets global and filesystem-specific mount options (additional options for vfat).
+   - Mounts the device and exits with an error if the mount fails.
+
+6. **Unmount Function:**
+
+   ```bash
+   do_unmount()
+   {
+       if [[ -z ${MOUNT_POINT} ]]; then
+           echo "Warning: ${DEVICE} is not mounted"
+       else
+           /bin/umount -l ${DEVICE}
+           echo "**** Unmounted ${DEVICE}"
+       }
+   
+       for f in /media/* ; do
+           if [[ -n $(/usr/bin/find "$f" -maxdepth 0 -type d -empty) ]]; then
+               if ! /bin/grep -q " $f " /etc/mtab; then
+                   echo "**** Removing mount point $f"
+                   /bin/rmdir "$f"
+               }
+           fi
+       done
+   }
+   ```
+
+   - Unmounts the device if it is mounted.
+   - Removes any empty directories in `/media/` that are not currently used as mount points.
+
+7. **Main Script Logic:**
+
+   ```bash
+   case "${ACTION}" in
+       add)
+           do_mount
+           ;;
+       remove)
+           do_unmount
+           ;;
+       *)
+           usage
+           ;;
+   esac
+   ```
+
+   - Calls the appropriate function (`do_mount` or `do_unmount`) based on the action specified.
+   - Calls the `usage` function if the action is neither "add" nor "remove".
+
+### 9.2. Step 2: Create systemd unit (service) to run the script on rpi
+
+The script, in turn, is called by a systemd unit file. We use the "@" filename syntax so we can pass the device name as an argument.
+
+**/etc/systemd/system/usb-mount@.service**
+
+```bash
+[Unit]
+Description=Mount USB Drive on %i
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/usr/local/bin/usb-mount.sh add %i
+ExecStop=/usr/local/bin/usb-mount.sh remove %i
+```
+
+### [Unit] Section
+
+#### Description
+
+```bash
+Description=Mount USB Drive on %i
+```
+
+- **Description:** This provides a brief description of what the service does. In this case, it indicates that the service is responsible for mounting a USB drive.
+- **%i:** This is a placeholder that gets replaced with the instance name when the service is called. For example, if the service is started with `usb-mount@sdb1.service`, `%i` will be replaced with `sdb1`.
+
+### [Service] Section
+
+#### Type
+
+```bash
+Type=oneshot
+```
+
+- **Type=oneshot:** This indicates that the service runs a single command and then exits. It is not a long-running service but performs a specific task once.
+
+#### RemainAfterExit
+
+```bash
+RemainAfterExit=true
+```
+
+- **RemainAfterExit=true:** This tells systemd to consider the service active even after the `ExecStart` command has completed. This is useful for services that perform a setup task and do not need to remain running to be considered active.
+
+#### ExecStart
+
+```bash
+ExecStart=/usr/local/bin/usb-mount.sh add %i
+```
+
+- **ExecStart:** Specifies the command to run when the service starts. Here, it runs the `usb-mount.sh` script with the `add` argument and the instance name (`%i`). For example, if the service is started as `usb-mount@sdb1.service`, this line would execute `/usr/local/bin/usb-mount.sh add sdb1`.
+- **add %i:** The script is called with the `add` action and the device name.
+
+#### ExecStop
+
+```bash
+ExecStop=/usr/local/bin/usb-mount.sh remove %i
+```
+
+- **ExecStop:** Specifies the command to run when the service stops. Here, it runs the `usb-mount.sh` script with the `remove` argument and the instance name (`%i`). For example, if the service is stopped as `usb-mount@sdb1.service`, this line would execute `/usr/local/bin/usb-mount.sh remove sdb1`.
+- **remove %i:** The script is called with the `remove` action and the device name.
+
+### Conclusion
+
+The `usb-mount@.service` file is a template for a systemd service that can mount and unmount USB drives. Here is how it works:
+
+1. **Instance Creation:**
+   - The service is instantiated with a specific device name, such as `usb-mount@sdb1.service`.
+   - `%i` in the service file gets replaced with `sdb1`.
+2. **When Starting the Service:**
+   - **ExecStart:** Executes the `usb-mount.sh` script with the `add` action and the device name (`sdb1`), which mounts the USB drive.
+3. **When Stopping the Service:**
+   - **ExecStop:** Executes the `usb-mount.sh` script with the `remove` action and the device name (`sdb1`), which unmounts the USB drive.
+4. **Service Type:**
+   - **Type=oneshot:** Indicates the service performs its task and then exits.
+   - **RemainAfterExit=true:** Keeps the service in an active state even after the script completes.
+
+This setup allows for dynamic handling of USB devices, where each device can be managed individually using its own instance of the service.
+
+### 9.3. Step 3:
+
+Finally, some udev rules start and stop the systemd unit service on hotplug/unplug:
+
+ Go to **/etc/udev/rules.d**  in rpi rootfs and create this file  **99-local.rules** and put on it the below
+
+```bash
+KERNEL=="sd[a-z][0-9]", SUBSYSTEMS=="usb", ACTION=="add", RUN+="/bin/systemctl start usb-mount@%k.service"
+
+KERNEL=="sd[a-z][0-9]", SUBSYSTEMS=="usb", ACTION=="remove", RUN+="/bin/systemctl stop usb-mount@%k
+```
+
+1. **Navigate to the udev rules directory:**
+
+   - On your Raspberry Pi root filesystem, go to the directory where udev rules are stored:
+
+     ```bash
+     cd /etc/udev/rules.d/
+     ```
+
+2. **Create a new udev rules file:**
+
+   - Create a file named 
+
+     ```
+     99-local.rules
+     ```
+
+      in this directory. You can use a text editor like **Vi** ,**nano** ,**gedit** ......etc.
+
+     ```bash
+     sudo nano 99-local.rules
+     ```
+
+3. **Add the udev rules:**
+
+   - Copy and paste the following rules into the file and save it:
+
+     ```
+     bashCopy codeKERNEL=="sd[a-z][0-9]", SUBSYSTEMS=="usb", ACTION=="add", RUN+="/bin/systemctl start usb-mount@%k.service"
+     
+     KERNEL=="sd[a-z][0-9]", SUBSYSTEMS=="usb", ACTION=="remove", RUN+="/bin/systemctl stop usb-mount@%k.service"
+     ```
+
+### Explanation of the udev Rules
+
+#### Rule for Adding (Plugging in) a USB Device
+
+```
+KERNEL=="sd[a-z][0-9]", SUBSYSTEMS=="usb", ACTION=="add", RUN+="/bin/systemctl start usb-mount@%k.service"
+```
+
+- **KERNEL=="sd\[a-z][0-9]":** This matches devices with names like `sda1`, `sdb1`, `sdc1`, etc. The `[a-z]` matches any letter and `[0-9]` matches any digit, ensuring it matches partitions on USB drives.
+- **SUBSYSTEMS=="usb":** This specifies that the rule applies to devices within the USB subsystem.
+- **ACTION=="add":** This specifies that the rule should be applied when a device is added (plugged in).
+- **RUN+="/bin/systemctl start usb-mount@%k.service":** This runs the specified command when the rule matches. Here, `%k` is a placeholder for the kernel device name (e.g., `sdb1`). This command starts the `usb-mount@%k.service` systemd service, which in turn runs the `usb-mount.sh add` script for the device.
+
+#### Rule for Removing (Unplugging) a USB Device
+
+```
+KERNEL=="sd[a-z][0-9]", SUBSYSTEMS=="usb", ACTION=="remove", RUN+="/bin/systemctl stop usb-mount@%k.service"
+```
+
+- **KERNEL=="sd\[a-z][0-9]":** Matches the same set of devices as the add rule.
+- **SUBSYSTEMS=="usb":** Applies to devices within the USB subsystem.
+- **ACTION=="remove":** This specifies that the rule should be applied when a device is removed (unplugged).
+- **RUN+="/bin/systemctl stop usb-mount@%k.service":** This runs the specified command when the rule matches. Here, it stops the `usb-mount@%k.service` systemd service, which in turn runs the `usb-mount.sh remove` script for the device.
+
+#### Then run those commands to refresh the system
+
+```bash
+udevadm control --reload-rules
+```
+
+```bash
+systemctl daemon-reload
+```
 
 
 
+## 10. Graphical User Interface GUI (Qt)
 
-
-
-
-
-
-## 6. Graphical User Interface GUI (Qt)
-
-### 6.1. Download Qt
+### 10.1. Download Qt
 
 - https://www.qt.io/download-qt-installer-oss
 
@@ -889,7 +1379,7 @@ To start the ConnMan service, discover Wi-Fi networks, and connect to a specific
 
   ![image-20240520195657579](GP.assets/image-20240520195657579.png)
 
-  ### 6.2. install Qt creator 
+  ### 10.2. install Qt creator 
 
   
 
@@ -935,7 +1425,7 @@ To start the ConnMan service, discover Wi-Fi networks, and connect to a specific
 
 ![image-20240623053056554](README.assets/image-20240623053056554.png)
 
-### 6.3. Install Qt5 Tool chain for cross compilation
+### 10.3. Install Qt5 Tool chain for cross compilation
 
 ```bash
 bitbake meta-toolchain-qt5  
@@ -969,7 +1459,7 @@ bitbake meta-toolchain-qt5
 
 ![Screenshot_from_2024-06-22_23-04-10](README.assets/Screenshot_from_2024-06-22_23-04-10.png)
 
-### 6.4. Configuring the cross compiling and remote deployment settings on Qt creator
+### 10.4. Configuring the cross compiling and remote deployment settings on Qt creator
 
 - **source the SDK toolchain. The source path may differ depending on the output of your SDK installation**
 
@@ -989,7 +1479,59 @@ source /home/anas/yocto/poky/build/target/environment-setup-cortexa53-poky-linux
 
 ![image-20240623060734842](README.assets/image-20240623060734842.png)
 
-### 6.5. Qt Project Setup
+![Screenshot_from_2024-06-22_23-33-27](README.assets/Screenshot_from_2024-06-22_23-33-27.png)
+
+
+
+#### 10.4.1. Add a device for rpi
+
+![image-20240705191916722](README.assets/image-20240705191916722.png)
+
+>I connect the the rpi and my labtop on the same network through Wifi , and the IP **192.168.43.11** is rpi IP
+
+
+
+### 10.4.1. Add a Kit for rpi
+
+![image-20240705192112956](README.assets/image-20240705192112956.png)
+
+- **C compiler path**:
+
+   **/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/bin/aarch64-poky-linux/aarch64-poky-linux-gcc**
+
+- **C++ Compiler path** :
+
+  **/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/bin/aarch64-poky-linux/aarch64-poky-linux-g++** 
+
+  ![image-20240705192452611](README.assets/image-20240705192452611.png)
+
+- **Debugger path** : 
+
+  **/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/bin/aarch64-poky-linux/aarch64-poky-linux-gdb**
+
+![image-20240705192520784](README.assets/image-20240705192520784.png)
+
+- **Qt Version (qmake) path**:
+
+  **/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/bin/qmake**
+
+  ![image-20240705192705587](README.assets/image-20240705192705587.png)
+
+- **Cmake Path** :
+
+  **/home/anas/yocto/poky/build/target/sysroots/x86_64-pokysdk-linux/usr/bin/cmake**
+
+![image-20240705192800505](README.assets/image-20240705192800505.png)
+
+
+
+### 10.4.2. Test the Connection between Qt on laptop and rpi 
+
+![Screenshot_from_2024-06-27_18-21-19](README.assets/Screenshot_from_2024-06-27_18-21-19.png)
+
+
+
+### 10.5. Qt Project Setup
 
 This guide will help you create a new project in Qt Creator that can run on both desktop and Raspberry Pi 3.
 
@@ -1001,9 +1543,9 @@ This guide will help you create a new project in Qt Creator that can run on both
 
 **Steps to Create a New Qt Project**
 
-1. Open Qt Creator
+1. **Open Qt Creator**
 
-2. Create a New Project
+2. **Create a New Project**
 
 - Select **File** > **New File or Project** from the menu.
 - In the dialog that appears, choose **Application** > **Qt Widgets Application** (or another type of application if needed) and click **Choose...**.
@@ -1012,7 +1554,7 @@ This guide will help you create a new project in Qt Creator that can run on both
 ![Screenshot from 2024-06-25 14-48-53](https://github.com/anaskhamees/ITI44_GP/assets/151033711/60571586-ed02-4ffe-bc1a-0f67a60a2229)
 
 
-3. Set Project Details
+3. **Set Project Details**
 
 - Enter the **Name** and **Location** for your project.
 - Click **Next**.
@@ -1022,7 +1564,7 @@ This guide will help you create a new project in Qt Creator that can run on both
 
 
 
-4. Define the Project Kit
+4. **Define the Project Kit**
 
 - Select the kits you want to use. Ensure you select:
   - A desktop kit (e.g., Desktop Qt 5.15.2 GCC 64bit).
@@ -1033,13 +1575,13 @@ This guide will help you create a new project in Qt Creator that can run on both
 
 
 
-5. Configure Project
+5. **Configure Project**
 
 - Customize the Class Information if needed (e.g., `MainWindow` class details).
 - Click **Next**.
 
 
-6. Write Your Application Code
+6. **Write Your Application Code**
 
 - Implement your application logic in the generated project files (`main.cpp`, `mainwindow.cpp`, etc.), you can add .h files to Header Files ,and .cpp files to Source Files
 - Save your changes.
@@ -1048,26 +1590,25 @@ This guide will help you create a new project in Qt Creator that can run on both
 ![Screenshot from 2024-06-25 14-55-51](https://github.com/anaskhamees/ITI44_GP/assets/151033711/50a3c13c-8f1f-4a69-835f-1cc6c1a2e32b)
 
 
-7. Build and Run on Desktop
+7. **Build and Run on Desktop**
 
 - Select the desktop kit from the kit selector.
 - Click the **Build** button (hammer icon) to compile the project.
 - Click the **Run** button (green play icon) to run the application on your desktop.
 
 
-9. Deploy to Raspberry Pi 3
+9. **Deploy to Raspberry Pi 3**
 
  **a. Cross-Compile the Project**
 
 1. Select the Raspberry Pi kit from the kit selector.
-
 2. Click the **Build** button to compile the project for Raspberry Pi 3.
 
-   
 
-## 7. Features of Our In-Vehicle Infotainment System
 
-### 1. Music Streaming
+## 11. Features of Our In-Vehicle Infotainment System
+
+### 11.1. Music Streaming
 
 **Description**: When the music icon is clicked, the system streams MP3 files from a USB flash drive. It supports pause, continue, playback, repeat, shuffle, volume up, and volume down.
 
@@ -1079,7 +1620,7 @@ This guide will help you create a new project in Qt Creator that can run on both
 - `QListWidget`: To display the list of songs.
 - `QDirIterator`, `QDir`, `QUrl`: For handling file directories and URLs.
 
-### 2. Video Streaming
+### 11.2. Video Streaming
 
 **Description**: When the video icon is clicked, the system streams MP4 files from a USB flash drive. It supports pause, continue, playback, volume control, and other playback features.
 
@@ -1092,7 +1633,7 @@ This guide will help you create a new project in Qt Creator that can run on both
 
 - `QPushButton`: For control buttons (pause, play, volume up/down, etc.).
 
-### 3. Bluetooth Audio Streaming
+### 11.3. Bluetooth Audio Streaming
 
 **Description**: Supports audio streaming from Bluetooth-enabled devices, allowing users to play music wirelessly.
 
@@ -1102,7 +1643,7 @@ This guide will help you create a new project in Qt Creator that can run on both
 - `QBluetoothDeviceDiscoveryAgent`: To discover other Bluetooth devices.
 - `QBluetoothSocket`: For Bluetooth communication.
 
-### 4. Time and Date Display
+### 11.4. Time and Date Display
 
 **Description**: The system displays the current time and date.
 
@@ -1113,7 +1654,7 @@ This guide will help you create a new project in Qt Creator that can run on both
 - `QTimer`: To update the display every second.
 - `QLabel`: To display the time and date.
 
-### 5. Temperature Display
+### 11.5. Temperature Display
 
 **Description**: The system displays the current temperature, acquired from OpenWeatherMap.org using API keys.
 
@@ -1125,7 +1666,7 @@ This guide will help you create a new project in Qt Creator that can run on both
 - `QJsonObject`, `QJsonValue`: For JSON data manipulation.
 - `QNetworkRequest`: For making the network request.
 
-### 6. Settings
+### 11.6. Settings
 
 **Description**: The settings menu includes options to change the theme and edit the time and date.
 
@@ -1136,7 +1677,7 @@ This guide will help you create a new project in Qt Creator that can run on both
 - `QSettings`: To save and load settings.
 - `QPushButton`: For applying changes.
 
-### 7. YouTube Integration
+### 11.7. YouTube Integration
 
 **Description**: When the YouTube icon is clicked, the system opens the YouTube page in the browser.
 
@@ -1147,4 +1688,24 @@ This guide will help you create a new project in Qt Creator that can run on both
 - `QPushButton`: For the YouTube button.
 - `QWidget`, `QVBoxLayout`: For layout management.
 
-### 8. Air conditioner 
+### 11.8. Air conditioner 
+
+
+
+## 12. Boot the rpi on our IVI Application 
+
+We can put the application on **.profile** of rpi rootfs, so after system login our application will run , copy the below as it is and put them in the end of   **.profile file**
+
+![profile](README.assets/profile.jpeg)
+
+>Note that:
+>
+>1. don't change the screen calibration script and don't change the file order
+>2. our application stored under **/usr/local/bin** and its name **mp3_usb**
+
+
+
+## 13. Project Video on Rpi with touch screen
+
+<video src="../Downloads/IVI_Final.mp4"></video>
+
