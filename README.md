@@ -1707,5 +1707,6 @@ We can put the application on **.profile** of rpi rootfs, so after system login 
 
 ## 13. Project Video on Rpi with touch screen
 
-<video src="../Downloads/IVI_Final.mp4"></video>
 
+
+<video src="README.assets/IVI_Final.mp4"></video>
