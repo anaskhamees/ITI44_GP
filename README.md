@@ -1708,3 +1708,9 @@ We can put the application on **.profile** of rpi rootfs, so after system login 
 ## 13. [Project Video on Rpi with touch screen](https://drive.google.com/file/d/12nW6KdSHZKhbKk2oaNKeanlcIyWDffux/view?usp=sharing)
 
 
+## 14. Refrences
+https://github.com/alzahraaelsallakh/Infotainment-System-Yocto
+https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up/1
+
+
+
