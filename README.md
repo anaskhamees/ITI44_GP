@@ -86,7 +86,7 @@ git clone -b kirkstone https://github.com/meta-qt5/meta-qt5
 
 ### 2.2. Add the Layers in *bblayer.conf* file
 
-```c
+```
 "/ABSOLUTE/PATH/poky/meta \
  /ABSOLUTE/PATH/poky/meta-poky \
  /ABSOLUTE/PATH/poky/meta-yocto-bsp \
@@ -97,6 +97,7 @@ git clone -b kirkstone https://github.com/meta-qt5/meta-qt5
  /ABSOLUTE/PATH/meta-openembedded/meta-python \
  /ABSOLUTE/PATH/meta-openembedded/meta-networking \
  /ABSOLUTE/PATH/meta-openembedded/meta-multimedia \
+ /ABSOLUTE/PATH/meta-qt5 \
  "
 ```
 
